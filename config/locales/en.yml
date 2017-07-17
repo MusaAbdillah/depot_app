@@ -1,0 +1,113 @@
+# Files in the config/locales directory are used for internationalization
+# and are automatically loaded by Rails. If you want to use locales other
+# than English, add the necessary files in this directory.
+#
+# To use the locales, use `I18n.t`:
+#
+#     I18n.t 'hello'
+#
+# In views, this is aliased to just `t`:
+#
+#     <%= t('hello') %>
+#
+# To use a different locale, set it with `I18n.locale`:
+#
+#     I18n.locale = :es
+#
+# This would use the information in config/locales/es.yml.
+#
+# To learn more, please read the Rails Internationalization guide
+# available at http://guides.rubyonrails.org/i18n.html.
+
+en:
+  layouts: 
+    application: 
+      title: "Pragmatic Bookshelf"
+      home: "Home"
+      questions: "Questions"
+      news: "News"
+      contact: "Contact"
+  store: 
+    index: 
+      title_html: "Your Pragmatic Catalog"
+      add_html: "Add to Cart"
+  carts: 
+    cart: 
+      title: "Your Cart"
+      empty: "Empty cart"
+      checkout: "Checkout"
+  number: 
+    currency:
+        format: 
+          unit: "$"
+          precision: 2
+          separator: "."
+          delimiter: ","
+          format: "%u%n"
+  orders: 
+    new: 
+      legend: "Please Enter Your Details"
+    form: 
+      name: "Name"
+      address_html: "Address"
+      email: "E-mail"
+      pay_type: "Pay with"
+      pay_prompt_html: "Select a payment method"
+      submit: "Place Order"
+  thanks: "Thank you for your order"
+
+es: 
+  layouts: 
+    application:
+      title: "Publicaciones de Pragmatic"
+      home: "Inicio"
+      questions: "Preguentas"
+      news: "Noticias"
+      contact: "Contacto"
+  store: 
+    index: 
+      title_html: "Su Cat&aacute;logo de Pragmatic"
+      add_html: "A&ntilde;adir al Carrito"
+  carts: 
+    cart: 
+      title: "Carrito de la Compra"
+      empty: "Vaciar Carrito"
+      checkout: "Comprar"
+  number: 
+    currency:
+        format: 
+          unit: "$US"
+          precision: 2
+          separator: ","
+          delimiter: "."
+          format: "%n&nbsp;%u"
+  orders: 
+    new: 
+      legend: "Por favor, introduzca sus datos"
+    form: 
+      name: "Nombre"
+      address_html: "Direcci&oacute;n"
+      email: "E-mail"
+      pay_type: "Forma de pago"
+      pay_prompt_html: "Seleccione un m&eacute;todo de pago"
+      submit: "Realizar Pedido"
+  activerecord: 
+    errors: 
+      messages: 
+        inclusion: "no est&aacute; incluido en la lista"
+        blank: "no puede quedar en blanco"
+  errors: 
+    template: 
+      body: "Hay problemas con los siguientes campos:"
+      header: 
+        one: "1 error ha impedido que este %{model} se guarde"
+        other: "%{count} errores han impedido que este %{model} se guarde"
+    models: 
+      order: "pedido"
+    attributes:
+      order: 
+        address: "Direcci&oacute;n"
+        name: "Nombre"
+        email: "E-mail"
+        pay_type: "Forma de pago"
+  thanks: "Gracias por su pedido"
