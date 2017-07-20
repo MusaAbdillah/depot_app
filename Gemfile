@@ -12,7 +12,11 @@ gem 'sdoc',         '0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 gem 'jquery-rails', "2.3.0"
 gem 'jquery-ui-rails'
+<<<<<<< HEAD
 
+=======
+gem 'mailgun_rails'
+>>>>>>> 477480aadf661d9de5a2d214c7a4e869660e3ab7
 
 group :development, :test do
   gem 'sqlite3',     '1.3.9'
