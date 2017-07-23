@@ -22,17 +22,5 @@ module Depot
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
-    config.action_mailer.raise_delivery_errors = true
-    config.action_mailer.delivery_method = :smtp
-    # gmail configuration
-      config.action_mailer.smtp_settings = {
-        address:              'smtp.gmail.com',
-        port:                 587,
-        domain:               'mail.google.com',
-        user_name:            ENV["GMAIL_USERNAME"],
-        password:             ENV["GMAIL_PASSWORD"],
-        authentication:       'login',
-        enable_starttls_auto: true
-      }
   end
 end
