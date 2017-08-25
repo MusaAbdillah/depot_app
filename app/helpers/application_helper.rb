@@ -7,4 +7,14 @@ module ApplicationHelper
 		end
 		content_tag("div", attributes, &block)
 	end
+
+	#return base title if page title empty else otherwise
+	def title(page_title = '')
+		base_title = "AB Online Shop"
+		if page_title.empty?
+			base_title
+		else
+			page_title + " | " + base_title
+		end
+	end
 end

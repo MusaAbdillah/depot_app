@@ -40,14 +40,15 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+  # https://myaccount.google.com/lesssecureapps?pli=1
   config.action_mailer.smtp_settings = {  
       address: "smtp.gmail.com",
       port: 587,
       domain: "mail.google.com",
       authentication: "plain",
       enable_starttls_auto: true,
-      user_name: ENV["GMAIL_USERNAME"],
-      password: ENV["GMAIL_PASSWORD"]
+      user_name: "musaabdillahm9@gmail.com",
+      password: "musAAbdillAh123456"
     }
 
 end

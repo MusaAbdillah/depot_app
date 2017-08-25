@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Depot Book Online Store </title>
+  <title><%= title(yield(:title)) %></title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -12,8 +12,16 @@
 		<%= select_tag 'set_locale', options_for_select(LANGUAGES, I18n.locale.to_s), onchange: 'this.form.submit()'%>
 		<%= submit_tag 'submit' %>
 		<%= javascript_tag "$('.locale input').hide()" %>
-	<% end %>	
+	<% end %>
+	<%= image_tag("https://ecs7.tokopedia.net/img/cache/215/shops-1/2015/9/14/536289/536289_8b8d25f7-3456-4a7a-a2b3-77dc9d09e702.jpg") %>	
 	<%= @page_title || t('.title') %>
+	<div class="locale">
+	<% if session[:user_id] %>
+		<p><%= link_to "Logout", logout_path, method: :delete %></p>
+	<% else %>
+		<p><%= link_to "Login", login_path %> | <%= link_to "Signup", new_user_path %></p>
+	<% end %>
+	</div>
 </div>
 <div id="columns">
 	<div id="side">
@@ -30,15 +38,12 @@
 				<li> <%= link_to 'Orders', orders_path %> </li>
 				<li> <%= link_to 'Products', products_path %> </li>
 				<li> <%= link_to 'Users', users_path %> </li>
-				<li><hr></li>
-				<%= button_to "Logout", logout_path, method: :delete %>
+				<li><hr></li>				
 		<% else %>
 			<li> <a href="#"> <%= t('.questions') %> </a> </li>
 			<li> <a href="#"> <%= t('.news') %> </a> </li>
 			<li> <a href="#"> <%= t('.contact') %> </a> </li>
 			<li><hr></li>
-			<%= button_to "Login", login_path %>
-
 		<% end %>
 		</ul>
 	</div>

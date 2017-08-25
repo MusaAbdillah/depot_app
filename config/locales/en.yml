@@ -22,14 +22,14 @@
 en:
   layouts: 
     application: 
-      title: "Pragmatic Bookshelf"
+      title: "AB Online Shop"
       home: "Home"
       questions: "Questions"
       news: "News"
       contact: "Contact"
   store: 
     index: 
-      title_html: "Your Pragmatic Catalog"
+      title_html: "AB Online Shop Catalog"
       add_html: "Add to Cart"
   carts: 
     cart: 
@@ -59,14 +59,14 @@ en:
 es: 
   layouts: 
     application:
-      title: "Publicaciones de Pragmatic"
+      title: "AB Online Shop"
       home: "Inicio"
       questions: "Preguentas"
       news: "Noticias"
       contact: "Contacto"
   store: 
     index: 
-      title_html: "Su Cat&aacute;logo de Pragmatic"
+      title_html: "Su Cat&aacute;logo de AB Online Shop"
       add_html: "A&ntilde;adir al Carrito"
   carts: 
     cart: 
@@ -111,3 +111,41 @@ es:
         email: "E-mail"
         pay_type: "Forma de pago"
   thanks: "Gracias por su pedido"
+
+id:
+  layouts: 
+    application: 
+      title: "AB Online Shop"
+      home: "Beranda"
+      questions: "Pertanyaan"
+      news: "Berita"
+      contact: "Hubungi Kami"
+  store: 
+    index: 
+      title_html: "Katalog AB Online Shop"
+      add_html: "Tambah ke Keranjang"
+  carts: 
+    cart: 
+      title: "Keranjang Anda"
+      empty: "Kosongkan Keranjang"
+      checkout: "Selesai"
+  number: 
+    currency:
+        format: 
+          unit: "Rp"
+          precision: 2
+          separator: "."
+          delimiter: ","
+          format: "%u%n"
+  orders: 
+    new: 
+      legend: "Alamat lengkap pengiriman"
+    form: 
+      name: "Nama"
+      address_html: "Alamat"
+      email: "E-mail"
+      pay_type: "Pembayaran"
+      pay_prompt_html: "Pilih Cara Pembayaran"
+      submit: "Selesaikan Pesanan"
+  thanks: "Terima kasih sudah berbelanja"
+
