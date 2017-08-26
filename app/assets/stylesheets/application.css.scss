@@ -13,23 +13,41 @@
  *= require_tree .
  *= require_self
  */
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
 #banner {
 	background: #fff;
 	padding: 10px;
 	border-bottom: 2px solid black;
 	font: small-caps 40px/40px "Times New Roman", serif;
-	color: #FF0011;
 	text-align: left;
 
 	.locale {
 		float: right;
 		margin: -0.25em 0.1em;
 		display: inline;
-
-		p{
-			padding-right: 20px;
-			color: black;
+		
+		select {
+			width: 100px;
+			height: 10px;
+			font-size: 12px;
 		}
+
+		p {
+			padding-right: 20px;
+			padding-top: 20px;
+			color: black;
+
+			a:hover {
+				background-color: white;
+			}
+		}
+	}
+
+	h1 {
+		color: #FF0011;
 	}
 	
 	img {
