@@ -1,9 +1,16 @@
 <h1> Dear <%= @order.name %></h1><br />
 
-<h3>Thank you for your recent order from The Pragmatic Store.</h3><br />
+<h3>Thank you for your recent order from AB OnlineShop.</h3><br />
 
 <h3>You ordered the following items:</h3><br />
 
 <h3><%= render @order.line_items -%> </h3><br />
+<h3>Go-Jek shipping Rp 15.000 </h3><br />
+<h3>Total : Rp <%= number_with_delimiter(@order.final_price_with_gojek_shipping_cost) %></h3>
 
+<p> Our Account bank :</p>
+<h2> BNI 034 281 1454 A/N Musa Abdillah</h2>
+<h2> MANDIRI 139 00 1686 5366 A/N Musa Abdillah</h2>
+<p> We wait your payment until <strong><%= (24.hours.from_now).strftime("%A, %d %B %Y at %I:%M%p") %></strong> </p>
 <p>We'll send you a separate e-mail when your order ships.</p><br />
+<p>Thank you for your order!</p>

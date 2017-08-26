@@ -17,4 +17,9 @@ module ApplicationHelper
 			page_title + " | " + base_title
 		end
 	end
+
+	#return current user and assingn it value to @current user using or equal to avoid multiple databases hited
+	def current_user
+		@current_user ||= User.find_by(id: session[:user_id])
+	end
 end

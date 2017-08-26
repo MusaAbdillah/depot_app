@@ -12,6 +12,7 @@ gem 'sdoc',         '0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 gem 'jquery-rails', "2.3.0"
 gem 'jquery-ui-rails'
+gem 'figaro'
 
 
 group :development, :test do
