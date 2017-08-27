@@ -49,6 +49,7 @@ en:
       legend: "Please Enter Your Details"
     form: 
       name: "Name"
+      phone: "Phone number"
       address_html: "Address"
       email: "E-mail"
       pay_type: "Pay with"
@@ -86,6 +87,7 @@ es:
       legend: "Por favor, introduzca sus datos"
     form: 
       name: "Nombre"
+      phone: "Phone number"
       address_html: "Direcci&oacute;n"
       email: "E-mail"
       pay_type: "Forma de pago"
@@ -142,6 +144,7 @@ id:
       legend: "Alamat lengkap pengiriman"
     form: 
       name: "Nama"
+      phone: "Nomor handphone"
       address_html: "Alamat"
       email: "E-mail"
       pay_type: "Pembayaran"
