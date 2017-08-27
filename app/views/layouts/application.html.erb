@@ -15,13 +15,13 @@
 		<%= javascript_tag "$('.locale input').hide()" %>
 	<% end %>
 	<%= image_tag("https://ecs7.tokopedia.net/img/cache/215/shops-1/2015/9/14/536289/536289_8b8d25f7-3456-4a7a-a2b3-77dc9d09e702.jpg") %>	
-	<%= @page_title || t('.title') %>
+	<h3><%= @page_title || t('.title') %></h3>
 	<div class="locale">
-	<% if session[:user_id] %>
-		<p><%= link_to "Logout", logout_path, method: :delete %></p>
-	<% else %>
-		<p><%= link_to "Login", login_path %> | <%= link_to "Signup", new_user_path %></p>
-	<% end %>
+		<% if current_user %>
+			<p><%= link_to "Logout", logout_path, method: :delete %></p>
+		<% else %>
+			<p><%= link_to "Login", login_path %> | <%= link_to "Signup", new_user_path %></p>
+		<% end %>
 	</div>
 </div>
 <div id="columns">
