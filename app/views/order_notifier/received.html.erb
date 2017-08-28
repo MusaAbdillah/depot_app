@@ -1,16 +1,57 @@
-<h1> Dear <%= @order.name %></h1><br />
+<h1> Dear <%= (@order.name).titleize %> </h1>
 
-<h3>Thank you for your recent order from AB OnlineShop.</h3><br />
+<h2>Thank you for your recent order from AB OnlineShop!</h2>
 
-<h3>You ordered the following items:</h3><br />
+<h3>You ordered the following items:</h3>
+<table class="table table-bordered">
+	<tr>
+		<th> Quantity </th>
+		<th> Product name </th>
+		<th> Total </th>
+	</tr>
+	<tr>
+		<td colspan="3"> 
+			<h3> 
+				<%= render @order.line_items %> 
+			</h3> 
+		</td>
+	</tr>
+	<tr>
+		<td colspan="2"> <h3> Gojek shipping cost </h3> </td>
+		<td> <h3> Rp 15.000 </h3> </td>
+	</tr>
+	<tr>
+		<td colspan="2"> <h3> Grand Total </h3> </td>
+		<td> <h3> Rp <%= number_with_delimiter(@order.final_price_with_gojek_shipping_cost) %> </h3> </td>
+	</tr>
+</table>
+<table class="table table-stripped" border="1px solid black">
+	<tr>
+		<th colspan="3"> <h3> Our Account bank : </h3></th>
+	</tr>
+	<tr>
+		<td> <h3> Bank Negara Indonesia (BNI) </h3> </td>
+		<td> <h3> 034 281 1454 </h3> </td>
+		<td> <h3> Musa Abdillah </h3> </td>
+	</tr>
+	<tr>
+		<td> <h3> Bank Mandiri </h3> </td>
+		<td> <h3> 139 00 1686 5366 </h3> </td>
+		<td> <h3> Musa Abdillah </h3> </td>
+	</tr>
+	<tr>
+		<td colspan="3">
+			<h4>
+				We wait your payment until 
+				<strong><%= (24.hours.from_now).strftime("%A, %d %B %Y at %I:%M%p") %></strong>
+			</h4>
+		</td>
+	</tr>
+	<tr> 
+		<td colspan="3"> <h4> We'll send you a separate e-mail when your order ships.</h4></td> 
+	</tr>
+	<tr>		
+		<td colspan="3"> <h4> Thank you for your order! </h4></td>
+	</tr>
+</table>
 
-<h3><%= render @order.line_items -%> </h3><br />
-<h3>Go-Jek shipping Rp 15.000 </h3><br />
-<h3>Total : Rp <%= number_with_delimiter(@order.final_price_with_gojek_shipping_cost) %></h3>
-
-<p> Our Account bank :</p>
-<h2> BNI 034 281 1454 A/N Musa Abdillah</h2>
-<h2> MANDIRI 139 00 1686 5366 A/N Musa Abdillah</h2>
-<p> We wait your payment until <strong><%= (24.hours.from_now).strftime("%A, %d %B %Y at %I:%M%p") %></strong> </p>
-<p>We'll send you a separate e-mail when your order ships.</p><br />
-<p>Thank you for your order!</p>
