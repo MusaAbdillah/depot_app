@@ -1,5 +1,8 @@
-<% provide(:title, "Admin") %>
+<% provide(:title, "Dashboard") %>
 <h1> Welcome <%= current_user.name %> </h1>
 <h2>It's <%= (Time.now).strftime("%A, %d %B %Y %I:%M%p") %></h2>
-<h3>We have <stong style="color:red;"><%= pluralize(@total_order, 'Order') %></stong>.</h3>
-
+<% if current_user && current_user.admin? %>
+	<h3>We have <stong style="color:red;"><%= pluralize(@total_order, 'Order') %></stong>.</h3>
+<% else %>
+	<h3> Let's get shopping!</h3>
+<% end %>

@@ -4,6 +4,14 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :set_i18n_locale_from_params
   before_action :authorize
+  include SessionsHelper
+  include ApplicationHelper
+
+  	def require_admin
+	  	unless current_user.admin?
+	  		redirect_to admin_url
+	  	end
+	end
 
 
   protected
