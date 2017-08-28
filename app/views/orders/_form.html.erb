@@ -1,39 +1,11 @@
-<%= form_for(@order) do |f| %>
-  <% if @order.errors.any? %>
-    <div id="error_explanation">
-      <h2><%=raw t('errors.template.header',count: @order.errors.count,model: t('activerecord.models.order')) %> </h2>
-      <p> <%= t('errors.template.body')%> </p>
-      <ul>
-      <% @order.errors.full_messages.each do |msg| %>
-        <li><%= raw msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-<table class="table table-stripped">
-  <tr>
-    <td> <%= f.label :name, t('.name') %> </td>
-    <td> <%= f.text_field :name, size: 40 %> </td>
-  </tr>
-  <tr>
-    <td> <%= f.label :phone_number, t('.phone') %> </td>
-    <td> <%= f.text_field :phone, size: 40 %> </td>
-  </tr>
-  <tr>
-    <td> <%= f.label :address, t('.address_html') %> </td>
-    <td> <%= f.text_area :address, rows: 4, cols: 40 %> </td>
-  </tr>
-  <tr>
-    <td> <%= f.label :email, t('.email') %> </td>
-    <td> <%= f.text_field :email, size: 40 %> </td>
-  </tr>
-  <tr>
-    <td> <%= f.label :pay_type, t('.pay_type') %> </td>
-    <td> <%= f.select :pay_type, Order::PAYMENT_TYPES, prompt: t('.pay_prompt_html') %></td>
-  </tr>
-  <tr>
-    <td></td>
-    <td> <%= f.submit t('.submit'), class: "btn btn-success" %> </td>
-  </tr>
-</table>
+<%= simple_form_for(@order) do |f| %>
+
+  <%= f.input :name, label: t('.name'), placeholder: "Full name" %>  
+  <%= f.input :phone, label: t('.phone'), placeholder: "Phone number" %>  
+  <%= f.input :address, label: t('.address_html'), rows: 6, cols: 40, placeholder: "Province, City, Districts and street detail with number. example : Komplek roxxxy maass blok c2 no. 4-5. samping gerai indosat. Jl. Hasyim Ashari no 01027 Gambir, Jakarta Pusat, 10150 DKI Jakarta " %>  
+  <%= f.input :pos_code, label: t('.postal_code'), placeholder: "Postal code" %>   
+  <%= f.input :email, label: t('.email'), placeholder: "Email" %>  
+  <%= f.input :pay_type, label: t('.pay_type'), as: :select, collection: ["BNI", "Mandiri"], prompt: t('.pay_prompt_html') %>
+  <%= f.button :submit, t('.submit'), :class => "btn btn-success btn-lg" %>
+
 <% end %>

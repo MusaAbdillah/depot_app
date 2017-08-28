@@ -7,7 +7,7 @@ class OrdersController < ApplicationController
   # GET /orders
   # GET /orders.json
   def index
-    @orders = Order.paginate(:page => params[:page], :per_page => 10)
+    @orders = Order.order(created_at: :desc).paginate(:page => params[:page], :per_page => 10)
   end
 
   # GET /orders/1
@@ -79,6 +79,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:name, :phone, :address, :email, :pay_type)
+      params.require(:order).permit(:name, :phone, :address, :pos_code, :email, :pay_type)
     end
 end

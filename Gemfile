@@ -13,9 +13,11 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'jquery-rails', "2.3.0"
 gem 'jquery-ui-rails'
 gem 'figaro'
+gem 'will_paginate',           '3.0.7'
+gem 'bootstrap-will_paginate', '0.0.10'
 gem 'bootstrap-sass', '~> 3.3.6'
-gem 'will_paginate', '~> 3.1.0'
-gem 'will_paginate-bootstrap'
+gem 'simple_form'
+
 
 
 
