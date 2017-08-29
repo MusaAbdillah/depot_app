@@ -12,14 +12,14 @@ class SessionsController < ApplicationController
       redirect_to admin_url
       # redirect_back_or user
   	else
-      flash.now[:alert] = 'Invalid user/password combination'
+      flash[:danger] = 'Invalid user/password combination'
   		redirect_to login_url
   	end
   end
 
   def destroy
   	logout
-    flash[:danger]  = "Success logged Out!"
+    flash[:danger]  = "Logged out successfully!"
   	redirect_to store_url
   end
 end

@@ -27,10 +27,11 @@ class UsersController < ApplicationController
   # POST /users.json
   def create
     @user = User.new(user_params)
-    login @user
     respond_to do |format|
       if @user.save
-        format.html { redirect_to admin_url, flash.now[:success] = 'User #{@user.name} was successfully created.' }
+        login @user
+        flash[:success] = "Welcome #{@user.name} to AB OnlineShop!."
+        format.html { redirect_to admin_url }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -44,7 +45,8 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to users_url, flash.now[:success] = 'User #{@user.name} was successfully updated.' }
+        flash[:success] = "User #{@user.name} was successfully updated."
+        format.html { redirect_to users_url }
         format.json { render :show, status: :ok, location: @user }
       else
         format.html { render :edit }
@@ -58,12 +60,13 @@ class UsersController < ApplicationController
   def destroy
     begin
       @user.destroy
-      flash.now[:notice] = "User #{@user.name} deleted"
+      flash[:danger] = "User #{@user.name} deleted"
     rescue StandardError => e
       flash[:notice] = e.message
     end
     respond_to do |format|
-      format.html { redirect_to users_url, flash[:notice] = 'User was successfully destroyed.' }
+      flash[:notice] = 'User was successfully destroyed.'
+      format.html { redirect_to users_url }
       format.json { head :no_content }
     end
   end

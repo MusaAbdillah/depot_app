@@ -30,7 +30,8 @@ class CartsController < ApplicationController
 
     respond_to do |format|
       if @cart.save
-        format.html { redirect_to @cart, flash.now[:success] = 'Cart was successfully created.' }
+        flash[:success] = 'Cart was successfully created.'
+        format.html { redirect_to @cart }
         format.json { render :show, status: :created, location: @cart }
       else
         format.html { render :new }
@@ -44,7 +45,8 @@ class CartsController < ApplicationController
   def update
     respond_to do |format|
       if @cart.update(cart_params)
-        format.html { redirect_to @cart, flash.now[:success] = 'Cart was successfully updated.' }
+        flash[:success] = 'Cart was successfully updated.'
+        format.html { redirect_to @cart }
         format.json { render :show, status: :ok, location: @cart }
       else
         format.html { render :edit }

@@ -4,5 +4,5 @@
 <% if current_user && current_user.admin? %>
 	<h3>We have <stong style="color:red;"><%= pluralize(@total_order, 'Order') %></stong>.</h3>
 <% else %>
-	<h3> Let's get shopping!</h3>
+	<h3> Let's get shopping!</h3> <%= button_to "Shop now!", admin_path, class: "btn btn-danger" %>
 <% end %>

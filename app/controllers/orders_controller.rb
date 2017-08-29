@@ -19,7 +19,7 @@ class OrdersController < ApplicationController
   # GET /orders/new
   def new
      if @cart.line_items.empty? 
-      flash.now[:notice] = "Your cart is empty"
+      flash[:info] = "Your cart is empty"
       redirect_to store_url
       return
     end
@@ -40,10 +40,12 @@ class OrdersController < ApplicationController
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
         OrderNotifier.received(@order).deliver
-        format.html { redirect_to store_url, flash[:success] =  I18n.t('.thanks') }
+        flash[:success] =  I18n.t('.thanks')
+        format.html { redirect_to store_url }
         format.json { render :show, status: :created, location: @order }
       else
-        format.html { render :new, flash.now[:notice] = "Please login first or register if you don't have an account."}
+        flash[:warning] = "Please login first or register if you don't have an account."
+        format.html { render :new}
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end
@@ -54,7 +56,8 @@ class OrdersController < ApplicationController
   def update
     respond_to do |format|
       if @order.update(order_params)
-        format.html { redirect_to @order, flash.now[:success] = 'Order was successfully updated.' }
+        flash[:success] = 'Order was successfully updated.'
+        format.html { redirect_to @order }
         format.json { render :show, status: :ok, location: @order }
       else
         format.html { render :edit }
@@ -68,7 +71,8 @@ class OrdersController < ApplicationController
   def destroy
     @order.destroy
     respond_to do |format|
-      format.html { redirect_to orders_url, flash.now[:danger] = 'Order was successfully destroyed.' }
+      flash[:danger] = 'Order was successfully destroyed.'
+      format.html { redirect_to orders_url }
       format.json { head :no_content }
     end
   end
