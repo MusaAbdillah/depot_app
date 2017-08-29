@@ -7,20 +7,17 @@ class ApplicationController < ActionController::Base
   include SessionsHelper
   include ApplicationHelper
 
-  	def require_admin
-	  	unless current_user.admin?
-	  		redirect_to admin_url
-	  	end
-	end
-
-
   protected
-	  def authorize
-	  	unless User.find_by(id: session[:user_id])
-	  		redirect_to login_url, notice: "Please log in"
-	  	end
-	  end
 
+  		#authorize method for multiple user
+	  	def authorize
+	  		unless User.find_by(id: session[:user_id])
+	  			flash[:warning] = "Please log in"
+	  			redirect_to login_url 
+	  		end
+	  	end
+
+	  #method for internazionalisation
 	  def set_i18n_locale_from_params
 	  	if params[:locale]
 		  	if I18n.available_locales.map(&:to_s).include?(params[:locale])
@@ -32,7 +29,16 @@ class ApplicationController < ActionController::Base
 	  	end
 	  end
 
+	  #method for default translation
 	  def default_url_options
 	  	{locale: I18n.locale}
 	  end
+
+	  #method for current user already have admin previlage
+	  def require_admin
+	  	unless current_user.admin?
+	  		flash[:warning] = "You should have admin previlage to access this part of site" 
+	  		redirect_to admin_url
+	  	end
+	end
 end

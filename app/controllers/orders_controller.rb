@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
   before_action :set_cart, only: [:new, :create]
   before_action :set_order, only: [:show, :edit, :update, :destroy]
   before_action :require_admin, except: [:new, :create]
-  skip_before_action :authorize, only: [:new, :create]
+  before_action :authorize, only: [:new, :create]
 
   # GET /orders
   # GET /orders.json
@@ -19,7 +19,8 @@ class OrdersController < ApplicationController
   # GET /orders/new
   def new
      if @cart.line_items.empty? 
-      redirect_to store_url, notice: "Your cart is empty"
+      flash.now[:notice] = "Your cart is empty"
+      redirect_to store_url
       return
     end
     @order = Order.new
@@ -39,10 +40,10 @@ class OrdersController < ApplicationController
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
         OrderNotifier.received(@order).deliver
-        format.html { redirect_to store_url, notice: I18n.t('.thanks') }
+        format.html { redirect_to store_url, flash[:success] =  I18n.t('.thanks') }
         format.json { render :show, status: :created, location: @order }
       else
-        format.html { render :new }
+        format.html { render :new, flash.now[:notice] = "Please login first or register if you don't have an account."}
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end
@@ -53,7 +54,7 @@ class OrdersController < ApplicationController
   def update
     respond_to do |format|
       if @order.update(order_params)
-        format.html { redirect_to @order, notice: 'Order was successfully updated.' }
+        format.html { redirect_to @order, flash.now[:success] = 'Order was successfully updated.' }
         format.json { render :show, status: :ok, location: @order }
       else
         format.html { render :edit }
@@ -67,7 +68,7 @@ class OrdersController < ApplicationController
   def destroy
     @order.destroy
     respond_to do |format|
-      format.html { redirect_to orders_url, notice: 'Order was successfully destroyed.' }
+      format.html { redirect_to orders_url, flash.now[:danger] = 'Order was successfully destroyed.' }
       format.json { head :no_content }
     end
   end

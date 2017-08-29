@@ -24,6 +24,14 @@
 			<% end %>
 		</div>
 	</div>
+	<div class="container">
+		<% flash.each do |alert_key, message_value| %>
+			<div class="alert alert-<%= alert_key %> alert-dismissable">
+				<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> 
+				<%= message_value %> 
+			</div>
+		<% end %>
+	</div>
 	<div id="columns">
 		<div id="side">
 			<div id="cart">

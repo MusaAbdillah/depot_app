@@ -9,16 +9,13 @@
 			<tbody>
 				<tr class="form-group">
 					<td><%= label_tag :name, 'Name' %></td>
-					<td>:</td>
 					<td><%= text_field_tag :name, params[:name], class: "form-control" %></td>
 				</tr>
 				<tr class="form-group">
 					<td><%= label_tag :password, 'Password' %></td>
-					<td>:</td>
 					<td><%= password_field_tag :password, params[:password], class: "form-control" %></td>
 				</tr>
 				<tr class="form-group">
-					<td></td>
 					<td></td>
 					<td colspan="2"><%= submit_tag 'Login', class: "btn btn-success" %></td>
 				</tr>
