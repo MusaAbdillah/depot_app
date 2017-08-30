@@ -5,8 +5,7 @@
 		<% cache ['entry', product] do %>
 			<div class="entry">
 				<%= image_tag(product.image_url) %>
-				<h3> <%= product.title %> </h3>
-				<p> <%= sanitize(product.description) %> </p>
+				<h3><%= link_to product.title, product_path(product) %></h3>
 				<div class="price_line">
 					<span class="price"> Rp <%= number_with_delimiter(product.price) %> </span>
 					<%= button_to t('.add_html'), line_items_path(product_id: product), remote: true, class: "btn btn-success" %>

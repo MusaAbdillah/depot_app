@@ -9,7 +9,8 @@
 	<%= render "layouts/header" %>
 	<body class="<%= controller.controller_name %>">
 		<div class="container-fluid">
-		
+
+				<!-- render message -->		
 				<% flash.each do |alert_key, message_value| %>
 					<div class="alert alert-<%= alert_key %> alert-dismissable">
 						<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a> 
@@ -17,35 +18,24 @@
 					</div>
 				<% end %>
 
-			<div id="columns">
-				<div id="side">
-					<div id="cart">
-					<% if @cart %>
-						<% hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
-							<%= render @cart %>
-						<% end %>
-					<% end %>
+			<div class="row">
+				<div id="columns">
+					<aside class="col-sm-3">
+						<div id="side">
+							<div id="cart">
+							<% if @cart %>
+								<% hidden_div_if(@cart.line_items.empty?, id: 'cart') do %>
+									<%= render @cart %>
+								<% end %>
+							<% end %>
+							</div>
+						</div><!-- end div of side-->
+					</aside>
+					<div class="col-sm-9">
+							<%= yield %>
 					</div>
-					<ul>
-						<li> <%= link_to t('.home'), store_path %> </li>
-						<% if current_user && current_user.admin? %>
-							<li> <%= link_to 'Orders', orders_path %> </li>
-							<li> <%= link_to 'Products', products_path %> </li>
-							<li> <%= link_to 'Users', users_path %> </li>
-							<li><hr></li>				
-						<% else %>
-							<li> <a href="#"> <%= t('.questions') %> </a> </li>
-							<li> <a href="#"> <%= t('.news') %> </a> </li>
-							<li> <a href="#"> <%= t('.contact') %> </a> </li>
-							<li><hr></li>
-						<% end %>
-					</ul>
-				</div><!-- end div of side-->
-
-				<div id="main">
-					<%= yield %>
-				</div><!-- end div of main-->
-			</div><!-- end div of columns-->
+				</div><!-- end div of columns-->
+			</div>	
 
 			<%= render "layouts/footer" %>
 		</div><!-- end div of container fluid-->

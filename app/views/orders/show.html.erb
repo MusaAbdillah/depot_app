@@ -1,21 +1,18 @@
-  <strong>Name:</strong>
-  <%= @order.name %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @order.address %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @order.email %>
-</p>
-
-<p>
-  <strong>Pay type:</strong>
-  <%= @order.pay_type %>
-</p>
-
-<%= link_to 'Edit', edit_order_path(@order) %> |
-<%= link_to 'Back', orders_path %>
+<table class="table table-bordered">
+	<thead>
+		<tr>
+			<th> Name </th>
+			<th> Address </th>
+			<th> Email </th>
+			<th> Pay Type </th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td> <%= @order.name %> </td>
+			<td> <%= @order.address %> </td>
+			<td> <%= @order.email %> </td>
+			<td> <%= @order.pay_type %> </td>
+		</tr>
+	</tbody>
+</table>

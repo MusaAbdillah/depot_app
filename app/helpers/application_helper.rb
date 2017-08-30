@@ -18,4 +18,9 @@ module ApplicationHelper
 		end
 	end
 
+	#method for convert boolean yes or no instead true or false 
+	def human_boolean(boolean)
+		boolean ? "Yes" : "No"
+	end
+
 end

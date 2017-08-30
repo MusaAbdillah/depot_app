@@ -22,6 +22,7 @@
 $light-gray: #777;
 
 /*universal */
+
 body {
 	padding: 60px;
 }
@@ -84,6 +85,49 @@ header {
 	}
 }
 
+/* aside */
+
+aside {
+	padding-left: 5px;
+
+	ul {
+		padding-top: 20px;
+		padding-bottom: 20px;
+		list-style: none;
+
+		a {
+			color: black;
+			font-size: 14px; 
+
+			&:visited {
+				color: black;
+			}
+
+			&:hover {
+				background-color: white;
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
+/* main conten col-sm-9*/
+col-sm-9 {
+	.entry {
+
+		h3 {
+
+			a {
+				color: black;
+
+				&:visited {
+					color: black;
+				}
+			}
+		}
+	}
+}
+
 /* typhography */
 
 h1, h2, h3, h4, h5, h6 {
@@ -115,12 +159,16 @@ footer {
 	color: $light-gray;
 
 	a {
-		color: #555;
+		color: $light-gray;
 		
 		&:hover {
 			color: none;
 			background-color: white;
 			text-decoration: underline;
+		}
+
+		&:visited {
+			color: $light-gray;
 		}
 	}
 
@@ -140,7 +188,7 @@ footer {
 
 }
 
-
+/*
 #columns {
 	background: #fff;
 
@@ -196,3 +244,4 @@ footer {
 	}
 }
 
+*/

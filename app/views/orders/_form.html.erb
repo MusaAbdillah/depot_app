@@ -6,6 +6,6 @@
   <%= f.input :pos_code, label: t('.postal_code'), placeholder: "Postal code" %>   
   <%= f.input :email, label: t('.email'), placeholder: "Email" %>  
   <%= f.input :pay_type, label: t('.pay_type'), as: :select, collection: ["BNI", "Mandiri"], prompt: t('.pay_prompt_html') %>
-  <%= f.button :submit, t('.submit'), :class => "btn btn-success btn-lg" %>
+  <%= f.button :submit, :class => "btn btn-success btn-lg" %>
 
 <% end %>

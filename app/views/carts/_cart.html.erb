@@ -1,13 +1,13 @@
 	<h3> <%= t('.title')%> </h3>
-	<table>
+	<table class="table table-stripped">
 		<%= render (@cart.line_items)%>
 
 
 		<tr class="total_line">
-			<td colspan="2"> Total </td>
+			<td colspan="3"> Total </td>
 			<td class="total_cell">Rp <%= number_with_delimiter(@cart.total_price) %> </td>		
 		</tr>
 		
 	</table>
-	<%= button_to t('.checkout'), new_order_path, method: :get %><hr/>
+	<%= button_to t('.checkout'), new_order_path, method: :get, class: "btn btn-danger" %><hr/>
 	<%= button_to t('.empty'), @cart, method: :delete, data: { confim: "Are you sure?" } %>

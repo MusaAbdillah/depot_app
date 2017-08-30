@@ -31,7 +31,19 @@
 			margin-left: 100px;
 			margin-top: 0;
 			margin-bottom: 2px;
-			color: black; 
+			color: black;
+
+			a {
+				color: black;
+
+				&:hover {
+					background-color: transparent;
+				}
+
+				&:visited {
+					color: black;
+				}
+			} 
 		}
 
 		p, div.price_line {

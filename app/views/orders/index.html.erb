@@ -20,9 +20,22 @@
         <td><%= order.pos_code %></td>
         <td><%= order.email %></td>
         <td><%= order.pay_type %></td>
-        <td><%= link_to 'Show', order, class: "btn btn-info btn-sm" %></td>
-        <td><%= link_to 'Edit', edit_order_path(order), class: "btn btn-warning btn-sm" %></td>
-        <td><%= link_to 'Destroy', order, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %></td>
+        <td>
+          <%= link_to order, class: "btn btn-info btn-sm" do %>
+          <i class="glyphicon glyphicon-eye-open"></i>  
+          <% end %>          
+        </td>
+        <td>
+          <%= link_to edit_order_path(order), class: "btn btn-warning btn-sm" do %>
+            <i class="glyphicon glyphicon-pencil"></i>
+          <% end %>
+        </td>
+        <td>
+          <%= link_to order, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" do %>
+            <i class="glyphicon glyphicon-trash"></i>
+          <% end %>
+            
+          </td>
       </tr>
     <% end %>
     <%= will_paginate %>
