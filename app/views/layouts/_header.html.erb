@@ -1,0 +1,22 @@
+	<header class="navbar navbar-fixed-top">
+		<div class="container">			
+			<%= link_to "AB OnlineShop", store_path, id: "logo" %>
+			<nav>
+				<ul class="nav navbar-nav navbar-right">					
+					<% if current_user %>
+						<li><%= link_to "Logout", logout_path, method: :delete %></li>
+					<% else %>
+						<li> <%= link_to "Login", login_path %> </li>
+						<li><%= link_to "Signup", new_user_path %></li>
+					<% end %>
+					<li>
+						<%= form_tag store_path, class: 'locale' do %>
+							<%= select_tag 'set_locale', options_for_select(LANGUAGES, I18n.locale.to_s), onchange: 'this.form.submit()'%>
+							<%= submit_tag 'submit' %>
+							<%= javascript_tag "$('.locale input').hide()" %>
+						<% end %>						
+					</li>
+				</ul>
+			</nav>			
+		</div>
+	</header>

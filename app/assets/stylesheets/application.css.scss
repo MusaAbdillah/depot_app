@@ -10,6 +10,7 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+
  *= require_tree .
  *= require_self
  */
@@ -17,65 +18,128 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
-#banner {
-	background: #fff;
-	padding: 10px;
-	padding-bottom: 30px;
-	border-bottom: 2px solid black;
-	font: small-caps 40px/40px "Times New Roman", serif;
-	text-align: left;
 
-	.locale {
-		float: right;
-		margin: -0.25em 0.1em;
-		display: inline-block;
+$light-gray: #777;
+
+/*universal */
+body {
+	padding: 60px;
+}
+
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.7em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: -1px;
+  padding-top: 9px;
+  font-weight: bold;
+
+  	&:hover {
+  		color: #fff;
+  		text-decoration: none;
+  		background-color: #cc0000;
+	}
+}
+
+section {
+	overflow: auto;
+}
+
+text-area {
+	resize: vertical;
+}
+
+a {
+
+	&:visited {
+		color: #fff;
+	}
+}
+
+
+/* header*/
+header {
+	background-color: #cc0000;
+
+	li {
 		
-		select {
-			width: 100px;
-			height: 30px;
-			font-size: 14px;
-		}
-
-		p {
-			color: black;
-
-			a:hover {
-				background-color: white;
+		a {
+			color: #fff;
+			&:hover {
+				background-color: #cc0000;
+				color: #fff;
+			}
+			
+			&:visited {
+				color: #fff;
 			}
 		}
 	}
 
-	h3 {
-		color: #FF0011;
-		font-weight: bold;
-	}
-	
-	img {
-		float: left;
-		width: 100px;
-		height: 80px;
-		padding-right: 15px;
+	form {
+		padding: 10px 5px;
+		color: black;
 	}
 }
 
-#footer {
-	background: #fff;
-	padding: 10px;
-	margin-top: 50px;
-	border-bottom: 2px solid black;
-	font: small-caps 40px/40px "Times New Roman", serif;
-	color: black;
+/* typhography */
+
+h1, h2, h3, h4, h5, h6 {
+	line-height: 1;
+}
+
+h1 {
+	font-size: 3em;
+	letter-spacing: -2px;
+	margin-bottom: 30px;
 	text-align: center;
 }
 
-#notice {
-	color: #000 !important;
-	border: 2px solid red;
-	padding: 1em;
-	margin-bottom: 2em;
-	background-color: #f0f0f0;
-	font: bold smaller sans-serif;
+h2 {
+	font-size: 1.2em;
+	letter-spacing: -1px;
+	margin-bottom: 30px;
+	text-align: center;
+	font-weight: normal;
+	color: $light-gray;
 }
+
+/* footer */
+
+footer {
+	margin-top: 45px;
+	padding-top: 5px;
+	border-top: 1px solid #eaeaea;
+	color: $light-gray;
+
+	a {
+		color: #555;
+		
+		&:hover {
+			color: none;
+			background-color: white;
+			text-decoration: underline;
+		}
+	}
+
+	small {
+		float: left;
+	}
+
+	ul {
+		float: right;
+		list-style: none;
+		
+		li {
+			float: left;
+			margin-left: 15px;
+		}
+	}
+
+}
+
 
 #columns {
 	background: #fff;
@@ -132,42 +196,3 @@
 	}
 }
 
-.depot_form {
-
-	fieldset {
-		background: white;
-
-		legend {
-			color: #black;
-			background: white;
-			font-family: sans-serif;
-			padding: 0.2em 1em;
-		}
-	}
-	/*
-	form {
-
-		label {
-			width: 5em;
-			float: left;
-			text-align: right;
-			padding-top: 0.2em;
-			margin-right: 0.1em;
-			display: block;
-		}
-
-		select, textarea, input {
-			margin-left: 0.5em;
-		}
-
-		.submit {
-			margin-left: 4em;
-		}
-
-		br {
-			display: none;
-		}
-	}
-	*/
-
-}
