@@ -60,12 +60,11 @@ class UsersController < ApplicationController
   def destroy
     begin
       @user.destroy
-      flash[:danger] = "User #{@user.name} deleted"
+      flash[:success] = "User #{@user.name} was successfully destroyed!"
     rescue StandardError => e
-      flash[:notice] = e.message
+      flash[:danger] = e.message
     end
     respond_to do |format|
-      flash[:notice] = 'User was successfully destroyed.'
       format.html { redirect_to users_url }
       format.json { head :no_content }
     end

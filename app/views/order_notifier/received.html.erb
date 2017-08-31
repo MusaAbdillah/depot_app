@@ -4,26 +4,27 @@
 
 <h3>You ordered the following items:</h3>
 <table class="table table-bordered">
-	<tr>
-		<th> Quantity </th>
-		<th> Product name </th>
-		<th> Total </th>
-	</tr>
-	<tr>
-		<td colspan="3"> 
-			<h3> 
-				<%= render @order.line_items %> 
-			</h3> 
-		</td>
-	</tr>
-	<tr>
-		<td colspan="2"> <h3> Gojek shipping cost </h3> </td>
-		<td> <h3> Rp 15.000 </h3> </td>
-	</tr>
-	<tr>
-		<td colspan="2"> <h3> Grand Total </h3> </td>
-		<td> <h3> Rp <%= number_with_delimiter(@order.final_price_with_gojek_shipping_cost) %> </h3> </td>
-	</tr>
+	<tbody>
+		<tr>
+			<th> Quantity </th>
+			<th></th>
+			<th> Product name </th>
+			<th> Total </th>
+		</tr>
+		<tr>
+			<td colspan="4">  
+					<%= render @order.line_items %> 
+			</td>
+		</tr>
+		<tr>
+			<td colspan="3"> <h3> Gojek shipping cost </h3> </td>
+			<td> <h3> Rp 15.000 </h3> </td>
+		</tr>
+		<tr>
+			<td colspan="3"> <h3> Grand Total </h3> </td>
+			<td> <h3> Rp <%= number_with_delimiter(@order.final_price_with_gojek_shipping_cost) %> </h3> </td>
+		</tr>
+	</tbody>
 </table>
 <table class="table table-stripped" border="1px solid black">
 	<tr>
