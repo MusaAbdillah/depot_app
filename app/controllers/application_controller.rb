@@ -41,5 +41,5 @@ class ApplicationController < ActionController::Base
 	  		flash[:warning] = "You should have admin previlage to access this part of site" 
 	  		redirect_to admin_url
 	  	end
-	end
+	end 
 end

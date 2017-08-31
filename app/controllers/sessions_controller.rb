@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   skip_before_action :authorize
-
+  
   def new
   end
 
@@ -21,4 +21,5 @@ class SessionsController < ApplicationController
     flash[:danger]  = "Logged out successfully!"
   	redirect_to store_url
   end
+
 end

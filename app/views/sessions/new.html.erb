@@ -1,4 +1,4 @@
-<div class="depot_form">
+<div class="col-md-6">
 	<%= form_tag do %>
 	<fieldset>
 		<legend> Please Log In </legend>
@@ -14,7 +14,11 @@
 				</tr>
 				<tr class="form-group">
 					<td></td>
-					<td colspan="2"><%= submit_tag 'Login', class: "btn btn-success" %></td>
+					<td><%= submit_tag 'Login', class: "btn btn-success btn-block" %></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td><p> New user? <%= link_to "Sign up now!", new_user_path, class: "btn btn-danger" %> </p></td>
 				</tr>
 			</tbody>
 		</table>

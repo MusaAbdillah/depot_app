@@ -18,7 +18,45 @@
 #
 # To learn more, please read the Rails Internationalization guide
 # available at http://guides.rubyonrails.org/i18n.html.
-
+id:
+  layouts: 
+    application: 
+      title: "AB Online Shop"
+      home: "Beranda"
+      questions: "Pertanyaan"
+      news: "Berita"
+      contact: "Hubungi Kami"
+  store: 
+    index: 
+      title_html: "Katalog AB Online Shop"
+      add_html: "Tambah ke Keranjang"
+  carts: 
+    cart: 
+      title: "Keranjang Anda"
+      empty: "Kosongkan Keranjang"
+      checkout: "Selesai"
+  number: 
+    currency:
+        format: 
+          unit: "Rp"
+          precision: 2
+          separator: "."
+          delimiter: ","
+          format: "%u%n"
+  orders: 
+    new: 
+      legend: "Alamat lengkap pengiriman"
+    form: 
+      name: "Nama"
+      phone: "Nomor handphone"
+      address_html: "Alamat"
+      email: "E-mail"
+      postal_code: "Kode pos"
+      pay_type: "Pembayaran"
+      pay_prompt_html: "Pilih Cara Pembayaran"
+      submit: "Selesaikan Pesanan"
+  thanks: "Terima kasih sudah berbelanja"
+  
 en:
   layouts: 
     application: 
@@ -116,42 +154,5 @@ es:
         pay_type: "Forma de pago"
   thanks: "Gracias por su pedido"
 
-id:
-  layouts: 
-    application: 
-      title: "AB Online Shop"
-      home: "Beranda"
-      questions: "Pertanyaan"
-      news: "Berita"
-      contact: "Hubungi Kami"
-  store: 
-    index: 
-      title_html: "Katalog AB Online Shop"
-      add_html: "Tambah ke Keranjang"
-  carts: 
-    cart: 
-      title: "Keranjang Anda"
-      empty: "Kosongkan Keranjang"
-      checkout: "Selesai"
-  number: 
-    currency:
-        format: 
-          unit: "Rp"
-          precision: 2
-          separator: "."
-          delimiter: ","
-          format: "%u%n"
-  orders: 
-    new: 
-      legend: "Alamat lengkap pengiriman"
-    form: 
-      name: "Nama"
-      phone: "Nomor handphone"
-      address_html: "Alamat"
-      email: "E-mail"
-      postal_code: "Kode pos"
-      pay_type: "Pembayaran"
-      pay_prompt_html: "Pilih Cara Pembayaran"
-      submit: "Selesaikan Pesanan"
-  thanks: "Terima kasih sudah berbelanja"
+
 
