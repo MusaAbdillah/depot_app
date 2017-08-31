@@ -12,6 +12,7 @@ class ApplicationController < ActionController::Base
   		#authorize method for multiple user
 	  	def authorize
 	  		unless User.find_by(id: session[:user_id])
+	  			store_location
 	  			flash[:warning] = "Please log in"
 	  			redirect_to login_url 
 	  		end

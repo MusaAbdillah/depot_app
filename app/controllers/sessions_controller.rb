@@ -9,8 +9,7 @@ class SessionsController < ApplicationController
   	if user && user.authenticate(params[:password])
   		login user 
       flash[:success] = 'Login successfully!'
-      redirect_to admin_url
-      # redirect_back_or user
+      redirect_back_or user
   	else
       flash[:danger] = 'Invalid user/password combination'
   		redirect_to login_url
