@@ -1,9 +1,11 @@
+<div class="col-md-6">
 <%= simple_form_for(@product) do |f| %>
 
     <%= f.input :title %>
-    <%= f.input :description, rows: 6 %>
+    <%= f.input :description, input_html: {rows: '6'} %>
     <%= f.input :image_url %>
     <%= f.input :price %>
     <%= f.button :submit, :class => "btn btn-success" %>
 
 <% end %>
+</div>
