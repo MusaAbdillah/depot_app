@@ -1,6 +1,7 @@
 class Order < ActiveRecord::Base
 	#assocition
 	has_many :line_items, dependent: :destroy
+	belongs_to :user
 
 	#validates
 	validates :name, :phone, :address, :pos_code, :email, :pay_type, presence: true

@@ -1,4 +1,6 @@
 class ProductsController < ApplicationController
+  require 'will_paginate/array'
+
   before_action :set_product, only: [:show, :edit, :update, :destroy]
   before_action :require_admin, except: [:index, :show]
   skip_before_action :authorize, only: [:index, :show]
@@ -6,7 +8,7 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
-    @products = Product.paginate(:page => params[:page], :per_page => 10)
+    @products = Product.all
   end
 
   # GET /products/1

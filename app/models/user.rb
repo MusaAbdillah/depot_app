@@ -2,6 +2,9 @@ class User < ActiveRecord::Base
   #CONSTANTA FOR VALID EMAIL 
   REGEX_VALID_EMAIL = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
 
+  #association 
+  has_many :orders, dependent: :destroy
+
 	after_destroy :ensure_an_admin_remains
   before_save :downcase_email, :downcase_name 
 

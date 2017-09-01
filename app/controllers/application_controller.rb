@@ -4,8 +4,9 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   before_action :set_i18n_locale_from_params
   before_action :authorize
-  include SessionsHelper
+
   include ApplicationHelper
+  include SessionsHelper
 
   protected
 

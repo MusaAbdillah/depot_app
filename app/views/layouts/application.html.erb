@@ -9,7 +9,7 @@
 	</head>
 	<%= render "layouts/header" %>
 	<body class="<%= controller.controller_name %>">
-		<div class="container-fluid">
+		<div class="container">
 
 				<!-- render message -->		
 				<% flash.each do |alert_key, message_value| %>
@@ -31,13 +31,14 @@
 							<% end %>
 							</div>
 						</div><!-- end div of side-->
-						<ul class="list group nav nav-pills nav-stacked">
-						  <li role="presentation" class="list-group-item">
-						  	<a href="#">Mousepad <span class="label label-danger"></span></a>
-						  </li>
-						  <li role="presentation" class="list-group-item"><a href="#">Mouse</a></li>
-						  <li role="presentation" class="list-group-item"><a href="#">Keyboard</a></li>
+
+						<ul class="list group">
+							<li><a href="#" class="list-group-item disabled">Product Category</a></li>
+						  	<li><a href="#" class="list-group-item">Mousepad</a></li>
+						  	<li><a href="#" class="list-group-item">Mouse</a></li>
+						  	<li><a href="#" class="list-group-item">Keyboard</a></li>
 						</ul>
+
 					</aside>
 					<div class="col-sm-9">
 							<%= yield %>
