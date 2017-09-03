@@ -4,7 +4,7 @@
 			<%= link_to "AB OnlineShop", store_path, id: "logo" %>
 			<nav>
 				<ul class="nav navbar-nav">
-					<li> <%= link_to t('.home'), store_path %> </li>
+					<!-- <li> <%= link_to t('.home'), store_path %> </li> -->
 					<% if current_user %>
 						<% if current_user.admin? %>
 							<li> <%= link_to 'Orders', orders_path %> </li>
@@ -13,8 +13,8 @@
 						<% end %>
 						<li> <%= link_to "Profile", user_path(current_user) %> </li>				
 					<% else %>
-						<li> <a href="#"> <%= t('.questions') %> </a> </li>
-						<li> <a href="#"> <%= t('.news') %> </a> </li>
+						<li>  <%= link_to t('.questions'), question_path %> </li>
+						<li>  <%= link_to t('.news'), news_path %> </li>
 						<li> <a href="#"> <%= t('.contact') %> </a> </li>
 					<% end %>
 				</ul>								

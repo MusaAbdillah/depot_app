@@ -1,9 +1,20 @@
 <footer class="footer">
+	<ul>
+		<li> 
+			<img src="https://www.nuwori.com/wp-content/uploads/2017/05/go-send-by-go-jek-logo.png" class="img-rounded" alt="go-send-by-go-jek-logo" width="75" height="25"> 
+		</li>
+		<li> 
+			<img src="https://image.cermati.com/v1437625814/personal-loan/wyjsacozmdfid1qc9dwb.jpg" class="img-rounded" alt="BNI" width="75" height="25"> 
+		</li>
+		<li> 
+			<img src="https://pendaftaran.budiluhur.ac.id/img/thumbs/mandirilogo.jpg" class="img-rounded" alt="Mandiri" width="75" height="25">
+		</li>
+	</ul>
 	<small>
 		&copy AB OnlineShop 2017 
 	</small>
 	<ul>
-		<li> <a href="#"> <%= t('.questions') %> </a> </li>
+		<li> <%= link_to t('.questions'), question_path %>  </li>
 		<li> <a href="#"> <%= t('.news') %> </a> </li>
 		<li> <a href="#"> <%= t('.contact') %> </a> </li>
 	</ul>

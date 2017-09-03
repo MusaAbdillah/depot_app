@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
+
+
   get 'admin' => 'admin#index'
+  get 'question' => 'static_pages#question'
+  get 'news' => 'static_pages#news'
+  get 'contact' => 'static_pages#contact'
 
   controller :sessions do 
     get 'login' => :new 
