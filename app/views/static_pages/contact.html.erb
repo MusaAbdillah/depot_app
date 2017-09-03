@@ -1,2 +1,23 @@
-<h1>StaticPages#contact</h1>
-<p>Find me in app/views/static_pages/contact.html.erb</p>
+<div class="col-md-6">
+	<%= form_tag do %>
+	<fieldset>
+		<legend> Contact us </legend>
+		<table class="table table-default">
+			<tbody>
+				<tr class="form-group">
+					<td><%= label_tag :email, 'Email' %></td>
+					<td><%= text_field_tag :email, params[:email], class: "form-control" %></td>
+				</tr>
+				<tr class="form-group">
+					<td><%= label_tag :content, 'Content' %></td>
+					<td><%= text_area_tag :content, params[:content], class: "form-control" %></td>
+				</tr>
+				<tr class="form-group">
+					<td></td>
+					<td><%= submit_tag 'Send', class: "btn btn-success btn-block" %></td>
+				</tr>
+			</tbody>
+		</table>
+	</fieldset>
+	<% end %>
+</div>

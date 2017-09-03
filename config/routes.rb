@@ -4,8 +4,11 @@ Rails.application.routes.draw do
   get 'admin' => 'admin#index'
   get 'question' => 'static_pages#question'
   get 'news' => 'static_pages#news'
-  get 'contact' => 'static_pages#contact'
-
+  
+  controller :static_pages do
+    get 'contact' => :contact
+    post 'contact' => :create
+  end
   controller :sessions do 
     get 'login' => :new 
     post 'login' => :create
