@@ -14,8 +14,10 @@ class Cart < ActiveRecord::Base
 		return current_item
 	end
 
-	#iterate throught cart and return total price 
-	def total_price 
+	#method for current item total price line items 
+	def total_price
 		line_items.to_a.sum { |item| item.total_price }
 	end
+
+	
 end

@@ -7,7 +7,7 @@ class ApplicationController < ActionController::Base
 
   include ApplicationHelper
   include SessionsHelper
-
+  
   protected
 
   		#authorize method for multiple user

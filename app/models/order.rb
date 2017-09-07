@@ -13,13 +13,15 @@ class Order < ActiveRecord::Base
 		end
 	end
 
-	#return total price of current line_items
-	def total_price 
+	#method for current item total price line items 
+	def total_price_line_items
 		line_items.to_a.sum { |item| item.total_price }
 	end
 
 	#return total price on line_items adding with go jek shipping cost
 	def final_price_with_gojek_shipping_cost
-		total_price + 15000
+		total_price_line_items + 15000
 	end
+
+	
 end

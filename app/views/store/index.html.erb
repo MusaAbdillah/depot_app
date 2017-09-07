@@ -1,4 +1,4 @@
-<% provide(:title, "Catalog")%>
+
 <h1> <%= t('.title_html')%> </h1>
 <% cache ['store', Product.latest] do %>
 	<% @products.each do |product| %>
