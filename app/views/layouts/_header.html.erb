@@ -19,14 +19,14 @@
 					<% end %>
 				</ul>								
 				<ul class="nav navbar-nav navbar-right">
-						
+						<% if @cart %>
 						<li>
-							<a href="#" data-toggle="modal" data-target=".bd-example-modal-lg">
-								<b>My Cart<span class="badge"></span>
+							<a href="#" data-toggle="modal" data-target=".bd-example-modal-lg" id="my-cart">
+								<b>My Cart <span class="label label-success" id="cart-badge"><%= cart_quantity(@cart.line_items)%></span>
 								</b>
 							</a>
 						</li>
-
+						<% end %>
 					<% if current_user %>
 						<li><%= link_to "Logout", logout_path, method: :delete %></li>
 						<li><%=  %></li>
@@ -50,8 +50,10 @@
 	<div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 	  	<div class="modal-dialog modal-md">
 	  		<div class="modal-content">
-		      	<div class="modal-body">
-		        	<%= render @cart if @cart %>
+		      	<div class="modal-body" id="cart-body">
+		        	<% if @cart %>
+							<%= render @cart %>
+					<% end %>
 		      	</div>
 		      	<div class="modal-footer">
 		        	<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
