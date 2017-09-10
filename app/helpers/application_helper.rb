@@ -23,7 +23,7 @@ module ApplicationHelper
 		boolean_statement ? "Yes" : "No"
 	end
 
-	#return 0 rupiah if line items is not ready or empty, using ternary statment
+	#return 0 rupiah if line items is not ready or empty, using ternary statement
 	def set_gojek_cost(line_items)
 		line_items.any? ? 'Rp 15,000' : 'Rp 0'
 	end

@@ -22,7 +22,10 @@
 						<% if @cart %>
 						<li>
 							<a href="#" data-toggle="modal" data-target=".bd-example-modal-lg" id="my-cart">
-								<b>My Cart <span class="label label-success" id="cart-badge"><%= cart_quantity(@cart.line_items)%></span>
+								<b>
+									My Cart <span class="label label-success" id="cart-badge">
+										<%= cart_quantity(@cart.line_items)%>
+									</span>
 								</b>
 							</a>
 						</li>

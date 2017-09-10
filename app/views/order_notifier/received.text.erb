@@ -6,7 +6,7 @@ You ordered the following items:
 
 <%= render @order.line_items -%>
 Go-Jek shipping Rp 15.000
-Total : Rp <%= number_with_delimiter(@order.final_price_with_gojek_shipping_cost) %>
+Total : Rp <%= number_with_delimiter(grand_total_price_with_go_jek_cost(@order.line_items)) %>
 
 Our Account bank :
 BNI 034 281 1454 A/N Musa Abdillah

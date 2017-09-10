@@ -22,7 +22,11 @@
 		</tr>
 		<tr>
 			<td colspan="3"> <h3> Grand Total </h3> </td>
-			<td> <h3> Rp <%= number_with_delimiter(@order.final_price_with_gojek_shipping_cost) %> </h3> </td>
+			<td> 
+				<h3> 
+					Rp <%= number_with_delimiter(grand_total_price_with_go_jek_cost(@order.line_items)) %> 
+				</h3> 
+			</td>
 		</tr>
 	</tbody>
 </table>

@@ -13,16 +13,5 @@ class Cart < ActiveRecord::Base
 		end
 		return current_item
 	end
-
-	#method for current item total price line items 
-	def total_price
-		line_items.to_a.sum { |item| item.total_price }
-	end
-
-	#method for total price with go ject shipping
-	def total_price_with_go_jek_cost
-		total_price != 0 ? total_price + 15000 : total_price 
-	end
-
 	
 end

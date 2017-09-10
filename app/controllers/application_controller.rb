@@ -8,6 +8,7 @@ class ApplicationController < ActionController::Base
   include ApplicationHelper
   include SessionsHelper
   include CartsHelper
+  include LineItemsHelper
   
   protected
 
