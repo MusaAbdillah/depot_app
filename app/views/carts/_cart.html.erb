@@ -2,12 +2,12 @@
 	<table class="table table-striped">
 		<%= render (@cart.line_items)%>
 		<tr>
-			<td colspan="3">Go Jek shipping cost</td>
-			<td>Rp 15.000</td>
+			<td colspan="3">Go-Jek cost</td>
+			<td><%= set_gojek_cost(@cart.line_items) %></td>
 		</tr>
 		<tr class="total_line">
-			<td colspan="3"> Total </td>
-			<td class="total_cell">Rp <%= number_with_delimiter(@cart.total_price_with_go_jek_cost) %> </td>		
+			<td colspan="3"><b> Total </b></td>
+			<td class="total_cell" colspan="2"><b>Rp <%= number_with_delimiter(@cart.total_price_with_go_jek_cost) %> </b></td>		
 		</tr>
 		
 	</table>
