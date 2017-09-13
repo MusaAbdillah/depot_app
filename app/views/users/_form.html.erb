@@ -1,20 +1,17 @@
-<div class="col-md-5">
-	<%= simple_form_for(@user) do |f| %>
+<%= simple_form_for(@user) do |f| %>
 
+	<%= f.input :name %>
 
-	    <%= f.input :name %>
+	<%= f.input :email %>
 
-	    <%= f.input :email %>
+	<%= f.input :phone %>
 
-	    <%= f.input :phone %>
+	<%= f.input :password, as: :password %>
 
-	    <%= f.input :password, as: :password %>
+	<%= f.input :password_confirmation, as: :password %> 
 
-	    <%= f.input :password_confirmation, as: :password %> 
+	<%= f.input :gender, as: :radio_buttons, collection: ['Male','Female']%>
 
-	    <%= f.input :gender, as: :radio_buttons, collection: ['Male','Female']%>
+	<%= f.button :submit, 'Create Account',:class => "btn btn-success btn-block" %>
 
-	    <%= f.button :submit, 'Create Account',:class => "btn btn-success" %>
-
-	<% end %>
-</div>
+<% end %>

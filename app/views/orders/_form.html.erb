@@ -1,15 +1,17 @@
-<div class="col-md-6">
-<%= simple_form_for(@order) do |f| %>
 
-  <%= f.input :name, label: t('.name'), placeholder: "Full name" %>  
-  <%= f.input :phone, label: t('.phone'), placeholder: "Phone number" %>  
-  <%= f.input :address, label: t('.address_html'), input_html: {rows: '6'}, placeholder: "Province, City, Districts and street detail with number. example : Komplek roxxxy maass blok c2 no. 4-5. samping gerai indosat. Jl. Hasyim Ashari no 01027 Gambir, Jakarta Pusat, 10150 DKI Jakarta " %>  
-  <%= f.input :pos_code, label: t('.postal_code'), placeholder: "Postal code" %>   
-  <%= f.input :email, label: t('.email'), placeholder: "Email" %>  
-  <%= f.input :pay_type, label: t('.pay_type'), as: :select, collection: ["BNI", "Mandiri"], prompt: t('.pay_prompt_html') %>
-  <%= f.hidden_field :user_id, :value => current_user.id %>
-  <%= f.button :submit, :class => "btn btn-success btn-lg" %>
+	<%= simple_form_for(@order) do |f| %>
+		<%= f.input :name, label: t('.name'), placeholder: "Full name" %>  
+		<%= f.input :phone, label: t('.phone'), placeholder: "Phone number" %>  
+		<%= f.input :address, label: t('.address_html'), input_html: {rows: '6'}, placeholder: "Province, City, Districts and street detail with number. example : Komplek roxxxy maass blok c2 no. 4-5. samping gerai indosat. Jl. Hasyim Ashari no 01027 Gambir, Jakarta Pusat, 10150 DKI Jakarta " %>  
+		<%= f.input :pos_code, label: t('.postal_code'), placeholder: "Postal code" %>   
+		<%= f.input :email, label: t('.email'), placeholder: "Email" %>  
+		<%= f.input :pay_type, label: t('.pay_type'), as: :select, collection: ["BNI", "Mandiri"], prompt: t('.pay_prompt_html') %>
+		<%= f.hidden_field :user_id, :value => current_user.id %>
+		<%= f.button :submit, :class => "btn btn-success btn-lg" %>
+	<% end %>
 
-<% end %>
 
-</div>
+
+
+
+

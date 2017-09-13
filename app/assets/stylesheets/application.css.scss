@@ -40,7 +40,11 @@ body {
   	&:hover {
   		color: #fff;
   		text-decoration: none;
-  		background-color: #cc0000;
+  		background-color: transparent;
+	}
+
+	&:visited {
+		text-decoration: none;
 	}
 }
 
@@ -63,18 +67,22 @@ a {
 /* header*/
 header {
 	background-color: #cc0000;
+	.nav {
 
-	li {
-		
-		a {
-			color: #fff;
-			&:hover {
-				background-color: #cc0000;
-				color: #fff;
-			}
+		li {
 			
-			&:visited {
+			a {
 				color: #fff;
+				background-color: transparent;
+				&:hover {
+					background-color: transparent;
+					color: #fff;
+				}
+				
+				&:visited {
+					color: #fff;
+					background-color: transparent;
+				}
 			}
 		}
 	}
@@ -187,61 +195,3 @@ footer {
 	}
 
 }
-
-/*
-#columns {
-	background: #fff;
-
-	#main {
-		margin-left: 17em;
-		padding: 1em;
-		background: white; 
-	}
-
-	#side {
-		float: left;
-		padding: 1em 2em;
-		width: 13em;
-		background: #fff;
-
-		form, div {
-			display: inline;
-		}
-
-		input {
-			font-size: small;
-		}
-
-		#cart {
-			font-size: smaller;
-			color: black;
-
-			table {
-				border-top: 1px dotted #595;
-				border-bottom: 1px dotted #595;
-				margin-bottom: 10px;
-			}
-		}
-
-		ul {
-			padding: 0;
-
-			li {
-				list-style: none;
-				padding-top: 5px;
-
-				a {
-					color: #000;
-					font-size: medium;
-					text-decoration: none;
-					&:hover{
-						background-color: #fff;
-						text-decoration: underline;
-					}
-				}
-			}
-		}
-	}
-}
-
-*/

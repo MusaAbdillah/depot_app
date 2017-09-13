@@ -3,8 +3,9 @@
 <% else %>
 <tr>
 <% end %>
+	<td><%= image_tag(line_item.product.image_url, size: "50x50") %></td>
 	<td> <%= line_item.quantity %></td>
 	<td>&times;</td>
-	<td> <%= (line_item.product.title).truncate_words(4) %> </td>
+	<td> <%= line_item.product.title %> </td>
 	<td class="item_price"> Rp <%= number_with_delimiter(line_item.total_price) %> </td>
 </tr>

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
+		<!-- using method for title change depending view name -->
 	  <title><%= title(yield(:title)) %></title>
 	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
@@ -20,8 +21,7 @@
 				<% end %>
 
 			<div class="row">
-				<div id="columns">
-					<aside class="col-sm-3">
+					<!-- <aside class="col-sm-3">
 						
 						
 						<div id="side">
@@ -33,20 +33,11 @@
 							<% end %>
 							</div>
 						</div> 
-						
 
-						<ul class="list group">
-							<li class="list-group-item disabled"><b>Product Category</b></li>
-						  	<li class="list-group-item"><a href="#">Mousepad</a></li>
-						  	<li class="list-group-item"><a href="#">Mouse</a></li>
-						  	<li class="list-group-item"><a href="#">Keyboard</a></li>
-						</ul>
-
-					</aside>
-					<div class="col-sm-9">
+					</aside> -->
+					<div class="col-sm-12">
 							<%= yield %>
 					</div>
-				</div><!-- end div of columns-->
 			</div>	
 
 			<%= render "layouts/footer" %>

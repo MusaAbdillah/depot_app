@@ -1,9 +1,9 @@
 <% provide(:title, "Login") %>
-<div class="col-md-6">
+<div class="col-md-6 col-md-offset-3">
 	<%= form_tag do %>
 	<fieldset>
 		<legend> Please Log In </legend>
-		<table class="table table-default">
+		<table class="table table-striped">
 			<tbody>
 				<tr class="form-group">
 					<td><%= label_tag :name, 'Name' %></td>
@@ -17,9 +17,15 @@
 					<td></td>
 					<td><%= submit_tag 'Login', class: "btn btn-success btn-block" %></td>
 				</tr>
+				<hr>
 				<tr>
 					<td></td>
-					<td><p> New user? <%= link_to "Sign up now!", new_user_path, class: "btn btn-danger" %> </p></td>
+					<td>
+						<p> 
+							New user? 
+							<%= link_to "Sign up now!", new_user_path, class: "btn btn-danger btn-block" %> 
+						</p>
+					</td>
 				</tr>
 			</tbody>
 		</table>

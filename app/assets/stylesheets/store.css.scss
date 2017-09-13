@@ -3,6 +3,18 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
 .store {
+	.col-md-3 {
+		li {
+			a {
+				color: black;
+			
+				&:hover{
+					background-color: transparent;
+					text-decoration: underline;
+				}	
+			}
+		}
+	}
 
 	h1 {
 		margin: 0;

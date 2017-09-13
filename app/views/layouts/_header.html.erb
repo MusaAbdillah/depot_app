@@ -4,18 +4,16 @@
 			<%= link_to "AB OnlineShop", store_path, id: "logo" %>
 			<nav>
 				<ul class="nav navbar-nav">
-					<!-- <li> <%= link_to t('.home'), store_path %> </li> -->
 					<% if current_user %>
 						<% if current_user.admin? %>
 							<li> <%= link_to 'Orders', orders_path %> </li>
 							<li> <%= link_to 'Products', products_path %> </li>
 							<li> <%= link_to 'All Users', users_path %> </li>
-						<% end %>
-						<li> <%= link_to "Profile", user_path(current_user) %> </li>				
+						<% end %>			
 					<% else %>
 						<li>  <%= link_to t('.questions'), question_path %> </li>
 						<li>  <%= link_to t('.news'), news_path %> </li>
-						<li>  <%= link_to t('.contact'), "#" %> </a> </li>
+						<li>  <%= link_to t('.contact'), contact_path %> </a> </li>
 					<% end %>
 				</ul>								
 				<ul class="nav navbar-nav navbar-right">
@@ -23,20 +21,23 @@
 						<li>
 							<a href="#" data-toggle="modal" data-target=".bd-example-modal-lg" id="my-cart">
 								<b>
+									<span class="glyphicon glyphicon-shopping-cart"></span>
 									My Cart <span class="label label-success" id="cart-badge">
-										<%= cart_quantity(@cart.line_items)%>
+										<%= cart_quantity(@cart.line_items)%> 									
 									</span>
 								</b>
 							</a>
 						</li>
 						<% end %>
+						
 					<% if current_user %>
-						<li><%= link_to "Logout", logout_path, method: :delete %></li>
-						<li><%=  %></li>
+						<li> <%= link_to "Profile", user_path(current_user) %> </li>	
+						<li> <%= link_to "Logout", logout_path, method: :delete %> </li>
 					<% else %>
 						<li> <%= link_to "Login", login_path %> </li>
-						<li><%= link_to "Signup", new_user_path %></li>
+						<li> <%= link_to "Signup", new_user_path %> </li>
 					<% end %>
+					<!-- form for i18n -->
 					<li>
 						<%= form_tag store_path, class: 'locale' do %>
 							<%= select_tag 'set_locale', options_for_select(LANGUAGES, I18n.locale.to_s), onchange: 'this.form.submit()'%>

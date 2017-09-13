@@ -1,10 +1,13 @@
-
-if ($('#cart tr').length == 1) { ('$cart').show('blind', 1000); }
-
-$('#cart').html("<%= escape_javascript render(@cart) %>");
-
-$('#current_item').css({'background-color': '#cc0000'}).animate({'background-color': '#fff'}, 1500);
-
+// update cart quantity every time add cart button clicked 
 $('#cart-badge').html("<%= cart_quantity(@cart.line_items)%>");
 
+// condition for cart
+if ($('#cart tr').length == 1) {
+	('$cart').show('blind', 1000); 
+}
+
+// change background color for new cart 
+$('#current_item').css({'background-color': '#cc0000'}).animate({'background-color': '#fff'}, 1500);
+
+// render cart for modal on header
 $('#cart-body').html("<%= escape_javascript render(@cart) %>");
