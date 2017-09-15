@@ -1,9 +1,13 @@
 <div class="col-md-3">
 	<ul class="list group">
 		<li class="list-group-item disabled"><b>Product Category</b></li>
-	  	<li class="list-group-item"><a href="#">Mousepad</a></li>
-	  	<li class="list-group-item"><a href="#">Mouse</a></li>
-	  	<li class="list-group-item"><a href="#">Keyboard</a></li>
+		<% if @categories.any? %>
+			<% @categories.each do |category| %>
+	  			<li class="list-group-item"><a href="#"><%= category.title %></a></li>
+	  		<% end %>
+	  	<% else %>
+	  		<li class="list-group-item">No Category right now!</li>
+	  	<% end %>
 	</ul>
 </div>
 <div class="col-md-9">				

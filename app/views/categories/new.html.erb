@@ -1,0 +1,5 @@
+<h3> New Product Category </h3>
+<%= simple_form_for(@category) do |f| %>
+		<%= f.input :title, placeholder: "Title" %>
+		<%= f.button :submit, :class => "btn btn-success" %>
+<% end %>

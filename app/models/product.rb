@@ -2,6 +2,7 @@ class Product < ActiveRecord::Base
 	#association
 	has_many :line_items
 	has_many :orders, through: :line_items
+	belongs_to :category
 
 	#callback
 	before_destroy :ensure_not_referenced_by_any_line_item

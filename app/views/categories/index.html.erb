@@ -1,0 +1,25 @@
+<% if @categories.any? %>
+	<table class="table table-striped">
+		<% @categories.each do |category| %>
+		<tr>
+			<td>
+				<%= category.title %>
+			</td>
+			<td>
+				<%= link_to edit_category_path(category), class: "btn btn-warning btn-sm" do %>
+		            <i class="glyphicon glyphicon-pencil"></i>			
+				<% end %>
+			</td>
+		</tr>
+		<% end %>
+	</table>
+<% else %>
+	<table class="table table-striped">
+	<tr>
+		<td>
+			<h3> Belum ada kategori</h3>
+		</td>
+	</tr>
+</table>
+<% end %>
+<%= link_to "New Category", new_category_path, class: "btn btn-success" %> </a>
