@@ -6,22 +6,23 @@
 <table class="table table-bordered">
 	<tbody>
 		<tr>
+			<th> Image </th>
 			<th> Quantity </th>
 			<th></th>
 			<th> Product name </th>
 			<th> Total </th>
 		</tr>
 		<tr>
-			<td colspan="4">  
+			<td colspan="5">  
 					<%= render @order.line_items %> 
 			</td>
 		</tr>
 		<tr>
-			<td colspan="3"> <h3> Gojek shipping cost </h3> </td>
+			<td colspan="4"> <h3> Gojek shipping cost </h3> </td>
 			<td> <h3> Rp 15.000 </h3> </td>
 		</tr>
 		<tr>
-			<td colspan="3"> <h3> Grand Total </h3> </td>
+			<td colspan="4"> <h3> Grand Total </h3> </td>
 			<td> 
 				<h3> 
 					Rp <%= number_with_delimiter(grand_total_price_with_go_jek_cost(@order.line_items)) %> 
@@ -30,7 +31,7 @@
 		</tr>
 	</tbody>
 </table>
-<table class="table table-stripped" border="1px solid black">
+<table class="table table-striped" border="1px solid black">
 	<tr>
 		<th colspan="3"> <h3> Our Account bank : </h3></th>
 	</tr>
@@ -59,4 +60,3 @@
 		<td colspan="3"> <h4> Thank you for your order! </h4></td>
 	</tr>
 </table>
-

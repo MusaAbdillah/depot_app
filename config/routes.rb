@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
 
+  mount RailsEmailPreview::Engine, at: 'emails'
   get 'admin' => 'admin#index'
   get 'question' => 'static_pages#question'
   get 'news' => 'static_pages#news'
@@ -19,6 +20,7 @@ Rails.application.routes.draw do
   get 'sessions/destroy'
 
   get 'store/index'
+  get '/store/:id' => 'store#show', as: :store_show
 
   resources :products do 
     get :who_bought, on: :member

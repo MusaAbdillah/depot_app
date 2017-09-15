@@ -18,6 +18,7 @@ gem 'bootstrap-will_paginate', '0.0.10'
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'simple_form'
 gem "font-awesome-rails"
+gem 'rails_email_preview', '~> 2.0.4'
 
 
 

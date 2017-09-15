@@ -3,7 +3,7 @@
 		<li class="list-group-item disabled"><b>Product Category</b></li>
 		<% if @categories.any? %>
 			<% @categories.each do |category| %>
-	  			<li class="list-group-item"><a href="#"><%= category.title %></a></li>
+	  			<li class="list-group-item"><%= link_to category.title, store_show_path(category) %></li>
 	  		<% end %>
 	  	<% else %>
 	  		<li class="list-group-item">No Category right now!</li>

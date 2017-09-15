@@ -1,0 +1,17 @@
+<div class="col-md-12">				
+	<h1> <%= @category.title %> </h1>
+	<% cache ['store', Product.latest] do %>
+		<% @products.each do |product| %>
+			<% cache ['entry', product] do %>
+				<div class="entry">
+					<%= image_tag(product.image_url) %>
+					<h3><%= link_to product.title, product_path(product) %></h3>
+					<div class="price_line">
+						<span class="price"> Rp <%= number_with_delimiter(product.price) %> </span>
+						<%= button_to "Add to cart", line_items_path(product_id: product), remote: true, class: "btn btn-danger" %>
+					</div>
+				</div>
+			<% end %>
+		<% end %>
+	<% end %>
+</div>
