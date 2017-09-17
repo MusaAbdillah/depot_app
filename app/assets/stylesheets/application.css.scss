@@ -23,10 +23,6 @@ $light-gray: #777;
 
 /*universal */
 
-body {
-	padding: 60px;
-}
-
 #logo {
   float: left;
   margin-right: 10px;
@@ -65,7 +61,7 @@ a {
 
 
 /* header*/
-header {
+header.navbar-default {
 	background-color: #cc0000;
 	.nav {
 
