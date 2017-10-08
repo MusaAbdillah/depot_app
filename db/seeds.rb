@@ -5,7 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
-=begin	require 'uri'
+	require 'uri'
 	require 'net/http'
 	require 'openssl'
 	require 'json'
@@ -29,4 +29,4 @@
     				postal_code: n['postal_code'],
     				tipe: n['type'],	
     				province_id: n['province_id'] )
-    end =end
+    end 
