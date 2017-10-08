@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  province_id: 1
+  province: MyString
+  type: 
+  city_name: MyString
+  postal_code: MyString
+
+two:
+  province_id: 1
+  province: MyString
+  type: 
+  city_name: MyString
+  postal_code: MyString

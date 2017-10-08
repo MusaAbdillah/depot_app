@@ -26,6 +26,8 @@ class OrdersController < ApplicationController
     end
     @order = Order.new
     @users = User.all
+    @provinces = Province.all
+    @cities = City.all
   end
 
   # GET /orders/1/edit
@@ -87,6 +89,6 @@ class OrdersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def order_params
-      params.require(:order).permit(:name, :phone, :address, :pos_code, :email, :pay_type, :user_id)
+      params.require(:order).permit(:name, :phone, :address, :pos_code, :email, :pay_type, :province_id, :user_id, :city_id)
     end
 end

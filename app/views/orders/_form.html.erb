@@ -1,14 +1,64 @@
+<%= form_for(@order, class: "form-horizontal") do |f| %>
 
-	<%= simple_form_for(@order) do |f| %>
-		<%= f.input :name, label: t('.name'), placeholder: "Full name" %>  
-		<%= f.input :phone, label: t('.phone'), placeholder: "Phone number" %>  
-		<%= f.input :address, label: t('.address_html'), input_html: {rows: '6'}, placeholder: "Province, City, Districts and street detail with number. example : Komplek roxxxy maass blok c2 no. 4-5. samping gerai indosat. Jl. Hasyim Ashari no 01027 Gambir, Jakarta Pusat, 10150 DKI Jakarta " %>  
-		<%= f.input :pos_code, label: t('.postal_code'), placeholder: "Postal code" %>   
-		<%= f.input :email, label: t('.email'), placeholder: "Email" %>  
-		<%= f.input :pay_type, label: t('.pay_type'), as: :select, collection: ["BNI", "Mandiri"], prompt: t('.pay_prompt_html') %>
-		<%= f.hidden_field :user_id, :value => current_user.id %>
-		<%= f.button :submit, :class => "btn btn-success btn-lg" %>
-	<% end %>
+	  <div class="form-group row">
+	    <%= f.label :nama, class: "col-md-3 col-form-label" %>
+	    <div class="col-md-9">
+	    <%= f.text_field :name, class: "form-control col-md-9 " %>
+	  	</div>
+	  </div>
+
+	  <div class="form-group row">
+	    <%= f.label :No_Handphone, class: "col-md-3 col-form-label" %>
+	    <div class="col-md-9">
+	    <%= f.text_field :phone, class: "form-control col-md-9" %>
+	  	</div>
+	  </div>
+
+	  <div class="form-group row">
+	    <%= f.label :Alamat, class: "col-md-3 col-form-label" %>
+	    <div class="col-md-9">
+	    <%= f.text_area :address, class: "form-control col-md-9" %>
+	  	</div>
+	  </div>
+
+	  <div class="form-group row">
+	    <%= f.label :Provinsi, class: "col-md-3 col-form-label" %>
+	    <div class="col-md-9">
+	    <%= f.collection_select :province_id, Province.order(:province_name), :id, :province_name, {prompt: "== Pilih Provinsi Tujuan =="}, {class: "form-control col-md-9"} %>
+	    </div>
+	  </div>
+
+	  <div class="form-group row">
+	    <%= f.label :Kota, class: "col-md-3 col-form-label" %>
+	    <div class="col-md-9">
+	    <%= f.grouped_collection_select :city_id, Province.order(:province_name), :cities, :province_name, :id, :city_name, {prompt: "== Pilih Kota Tujuan =="}, {class: "form-control col-md-9"} %>
+	    </div>
+	  </div>
+
+	  <div class="form-group row">
+	    <%= f.label :Pembayaran, class: "col-md-3 col-form-label" %>
+	    <div class="col-md-9">
+	    <%= f.select :pay_type,["BNI", "Mandiri"],{prompt: "== Pilih Cara Pembayaran =="}, {class: "form-control col-md-9"}  %>
+	  	</div>
+	  </div>
+
+	  <div class="form-group row">
+	    <%= f.label :Kode_pos, class: "col-md-3 col-form-label" %>
+	    <div class="col-md-4">
+	    <%= f.text_field :pos_code, class: "form-control col-md-4" %>
+	  	</div>
+	  </div>
+
+	  <%= f.hidden_field :email, :value => current_user.email %>
+	  <%= f.hidden_field :user_id, :value => current_user.id %>
+	  
+	  <div class="form-group row">
+	  	<div class="col-md-9 col-md-offset-3">
+	    <%= f.submit "Selesaikan Transaksi", :class => "btn btn-success" %>
+	  	</div>
+	  </div>
+
+<% end %>
 
 
 

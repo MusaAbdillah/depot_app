@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   end
 
   scope '(:locale)' do 
+    resources :provinces
     resources :users
     resources :orders
     resources :line_items
