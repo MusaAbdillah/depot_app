@@ -33,27 +33,7 @@ module ApplicationHelper
 		line_items.any? ? 'Rp 15,000' : 'Rp 0'
 	end
 
-	def rajaongkir(destination, weight = 1000, courier = 'jne')
-		begin 
-			url = URI("http://api.rajaongkir.com/starter/cost")
-			request = Net::HTTP::POST.new(url)
-			request['key'] = '2e2597d10cfb3b707a8c678632ddfdff'
-			request['content-type'] = 'application/x-www-form-urlencoded'
-			request.body = "origin=501&destination=#{destination}&weight=#{weight}&courier=#{courier}"
-			body = JSON.parse(Net::HTTP.new(url.host, url.port).request(request).read_body)
-			if body['rajaongkir']['status']['code'] == 200
-				if body['rajaongkir']['results'][0]['costs'][0].nil?
-					nil
-				else
-					body['rajaongkir']['results'][0]['costs'][0]['costs'][0]['value']
-				end
-			else
-				false
-			end
-		rescue 
-			false
-		end
-	end
+
 
 
 end
