@@ -1,8 +1,3 @@
-require 'uri'
-require 'net/http'
-require 'openssl'
-require 'json'
-
 module ApplicationHelper
 
 	#helper for hidden cart when empty
