@@ -1,62 +1,62 @@
-<h1> Dear <%= (@order.name).downcase.titleize %> </h1>
+<div class="header" style="background-color: #cc0000;">
+	<h1 style="padding: 5px; color: white;"> Dear <%= (@order.name).downcase.titleize %> </h1>
 
-<h2>Thank you for your recent order from AB OnlineShop!</h2>
-
-<h3>You ordered the following items:</h3>
-<table class="table table-bordered">
-	<tbody>
+	<h2 style="padding: 5px; color: white;">Terima kasih sudah berbelanja di AB OnlineShop!</h2>
+</div>
+<div class="body" style="background-color: #f4f4f4; color: black; padding: 5px;">
+	<h3>Barang yang anda pesan adalah sebagai berikut:</h3>
+	<table>
+		<tbody>
+			<tr>
+				<th style="padding: 5px;"> Gambar </th>
+				<th style="padding: 5px;"> Jumlah </th>
+				<th style="padding: 5px;"></th>
+				<th style="padding: 5px;"> Nama barang </th>
+				<th style="padding: 5px;"> Total </th>
+			</tr>
+			<tr>
+				<td colspan="5" style="padding: 5px;">  
+						<%= render @order.line_items %> 
+				</td>
+			</tr>
+			<tr>
+				<td colspan="4" style="padding: 5px;"> <h3>  Ongkos kirim dengan Gojek </h3> </td>
+				<td style="padding: 5px;"> <h3> Rp 15.000 </h3> </td>
+			</tr>
+			<tr>
+				<td colspan="4" style="padding: 5px;"> <h3> Jumlah Total </h3> </td>
+				<td style="padding: 5px;"> 
+					<h3> 
+						Rp <%= number_with_delimiter(grand_total_price_with_go_jek_cost(@order.line_items)) %> 
+					</h3> 
+				</td>
+			</tr>
+		</tbody>
+		</table>
+		<table>
 		<tr>
-			<th> Image </th>
-			<th> Quantity </th>
-			<th></th>
-			<th> Product name </th>
-			<th> Total </th>
+			<th colspan="3"><h2 style="text-align: left;"> Silahkan melakukan pelunasan dengan transfer ke akun bank kami di bawah ini:</h2></th>
 		</tr>
 		<tr>
-			<td colspan="5">  
-					<%= render @order.line_items %> 
+			<td style="padding: 5px;"> <h3> Bank Negara Indonesia (BNI) </h3> </td>
+			<td style="padding: 5px;""> <h3> 034 281 1454 </h3> </td>
+			<td style="padding: 5px;"> <h3> Musa Abdillah </h3> </td>
+		</tr>
+		<tr>
+			<td style="padding: 5px;"> <h3> Bank Mandiri </h3> </td>
+			<td style="padding: 5px;"> <h3> 139 00 1686 5366 </h3> </td>
+			<td style="padding: 5px;"> <h3> Musa Abdillah </h3> </td>
+		</tr>
+		<tr>
+			<td colspan="3">
+				<h4>
+					Kami tunggu pelunasan pembayaran sampai 
+					<strong><%= (24.hours.from_now).strftime("%A, %d %B %Y at %I:%M%p") %></strong>
+				</h4>
 			</td>
 		</tr>
-		<tr>
-			<td colspan="4"> <h3> Gojek shipping cost </h3> </td>
-			<td> <h3> Rp 15.000 </h3> </td>
+		<tr>		
+			<td colspan="3"> <h4> Terima kasih sudah berbelanja di AB OnlineShop!</h4></td>
 		</tr>
-		<tr>
-			<td colspan="4"> <h3> Grand Total </h3> </td>
-			<td> 
-				<h3> 
-					Rp <%= number_with_delimiter(grand_total_price_with_go_jek_cost(@order.line_items)) %> 
-				</h3> 
-			</td>
-		</tr>
-	</tbody>
-</table>
-<table class="table table-striped" border="1px solid black">
-	<tr>
-		<th colspan="3"> <h3> Our Account bank : </h3></th>
-	</tr>
-	<tr>
-		<td> <h3> Bank Negara Indonesia (BNI) </h3> </td>
-		<td> <h3> 034 281 1454 </h3> </td>
-		<td> <h3> Musa Abdillah </h3> </td>
-	</tr>
-	<tr>
-		<td> <h3> Bank Mandiri </h3> </td>
-		<td> <h3> 139 00 1686 5366 </h3> </td>
-		<td> <h3> Musa Abdillah </h3> </td>
-	</tr>
-	<tr>
-		<td colspan="3">
-			<h4>
-				We wait your payment until 
-				<strong><%= (24.hours.from_now).strftime("%A, %d %B %Y at %I:%M%p") %></strong>
-			</h4>
-		</td>
-	</tr>
-	<tr> 
-		<td colspan="3"> <h4> We'll send you a separate e-mail when your order ships.</h4></td> 
-	</tr>
-	<tr>		
-		<td colspan="3"> <h4> Thank you for your order! </h4></td>
-	</tr>
-</table>
+	</table>
+</div>
