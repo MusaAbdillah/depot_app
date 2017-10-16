@@ -1,9 +1,12 @@
+<!-- email with css styling must using inline css -->
+<!-- header class -->
 <div class="header" style="background-color: #cc0000;">
 	<h1 style="padding: 5px; color: white;"> Hai <%= (@order.name).downcase.titleize %>!</h1>
 
 	<h2 style="padding: 5px; color: white;">Terima kasih sudah berbelanja di AB OnlineShop</h2>
 </div>
-<div class="body" style="background-color: #f4f4f4; color: black; padding: 5px;">
+<!-- body class -->
+<div class="body" style="background-color: #f4f4f4; color: black; padding: 5px;>
 	<h3>Barang yang anda pesan adalah sebagai berikut:</h3>
 	<table>
 		<tbody>
@@ -57,9 +60,12 @@
 			<td colspan="4">
 				<h4>
 					Kami tunggu pelunasan pembayaran sampai 
-					<strong><%= (24.hours.from_now).strftime("%d %B %Y pukul %I:%M %p") %></strong><br>
-					Jangan lupa konfirmasi setelah melakukan pembayaran dengan mengirim email ke musaabdillahm9@gmail.com atau cukup dengan mengirim sms ke 0858 8371 8464.
+					<strong><%= (24.hours.from_now).strftime("%d %B %Y pukul %I:%M %p") %></strong>
 				</h4>
+				<p>
+					<i>*Jangan lupa konfirmasi setelah melakukan pembayaran dengan mengirim email ke musaabdillahm9@gmail.com atau dengan mengirim sms ke 0858 8371 8464.</i>
+				</p>
+
 			</td>
 		</tr>
 		<tr>		
