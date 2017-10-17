@@ -1,17 +1,17 @@
 <!-- email with css styling must using inline css -->
 <!-- header class -->
-<div class="header" style="background-color: #cc0000;">
+<div class="header" style="background-color: #cc0000; padding-left: 10px;">
 	<h1 style="padding: 5px; color: white;"> Hai <%= (@order.name).downcase.titleize %>!</h1>
 
 	<h2 style="padding: 5px; color: white;">Terima kasih sudah berbelanja di AB OnlineShop</h2>
 </div>
 <!-- body class -->
-<div class="body" style="background-color: #f4f4f4; color: black; padding: 5px;>
-	<h3>Barang yang anda pesan adalah sebagai berikut:</h3>
+<div class="body" style="background-color: #f4f4f4; color: black; padding: 5px;">
+	<h3 style="padding-left: 10px;">Barang yang anda pesan adalah sebagai berikut:</h3>
 	<table>
-		<tbody>
+		<tbody style="padding-left: 10px;">
 			<tr>
-				<th style="padding: 5px;"> Gambar </th>
+				<th style="padding: 5px; "> Gambar </th>
 				<th style="padding: 5px;"> Jumlah </th>
 				<th style="padding: 5px;"></th>
 				<th style="padding: 5px;"> Nama barang </th>
@@ -36,40 +36,42 @@
 			</tr>
 		</tbody>
 		</table>
-		<table>
-		<tr>
-			<th colspan="4"><h2 style="text-align: left;"> Silahkan melakukan pelunasan dengan transfer ke akun bank kami di bawah ini:</h2></th>
-		</tr>
-		<tr style="background-color: white;">
-			<td style="padding: 5px;"> 
-				<img src="http://res.cloudinary.com/ab-technology/image/upload/v1508158502/1200px-BankNegaraIndonesia46-logo.svg_mgxprd.png" style="height: 50; width: 50px;">
-			</td>
-			<td style="padding: 5px;"> <h3> Bank Negara Indonesia (BNI) </h3> </td>
-			<td style="padding: 5px;""> <h3> 034 281 1454 </h3> </td>
-			<td style="padding: 5px;"> <h3> Musa Abdillah </h3> </td>
-		</tr>
-		<tr style="background-color: white;">			
-			<td style="padding: 5px;"> 
-				<img src="http://res.cloudinary.com/ab-technology/image/upload/v1508158503/Bank_Mandiri_Logo_b11ces.png" style="height: 50; width: 50px;">
-			</td>
-			<td style="padding: 5px;"> <h3> Bank Mandiri </h3> </td>
-			<td style="padding: 5px;"> <h3> 139 00 1686 5366 </h3> </td>
-			<td style="padding: 5px;"> <h3> Musa Abdillah </h3> </td>
-		</tr>
-		<tr>
-			<td colspan="4">
-				<h4>
-					Kami tunggu pelunasan pembayaran sampai 
-					<strong><%= (24.hours.from_now).strftime("%d %B %Y pukul %I:%M %p") %></strong>
-				</h4>
-				<p>
-					<i>*Jangan lupa konfirmasi setelah melakukan pembayaran dengan mengirim email ke musaabdillahm9@gmail.com atau dengan mengirim sms ke 0858 8371 8464.</i>
-				</p>
+	<table>
+		<tbody style="padding-left: 10px;">
+			<tr>
+				<th colspan="4"><h2 style="text-align: left;"> Silahkan melakukan pelunasan dengan transfer ke akun bank kami di bawah ini:</h2></th>
+			</tr>
+			<tr style="background-color: white;">
+				<td style="padding: 5px;"> 
+					<img src="http://res.cloudinary.com/ab-technology/image/upload/v1508158502/1200px-BankNegaraIndonesia46-logo.svg_mgxprd.png" style="height: 50; width: 50px;">
+				</td>
+				<td style="padding: 5px;"> <h3> Bank Negara Indonesia (BNI) </h3> </td>
+				<td style="padding: 5px;"> <h3> 034 281 1454 </h3> </td>
+				<td style="padding: 5px;"> <h3> Musa Abdillah </h3> </td>
+			</tr>
+			<tr style="background-color: white;">			
+				<td style="padding: 5px;"> 
+					<img src="http://res.cloudinary.com/ab-technology/image/upload/v1508158503/Bank_Mandiri_Logo_b11ces.png" style="height: 50; width: 50px;">
+				</td>
+				<td style="padding: 5px;"> <h3> Bank Mandiri </h3> </td>
+				<td style="padding: 5px;"> <h3> 139 00 1686 5366 </h3> </td>
+				<td style="padding: 5px;"> <h3> Musa Abdillah </h3> </td>
+			</tr>
+			<tr style="padding-left: 10px;">
+				<td colspan="4">
+					<h4>
+						Kami tunggu pelunasan pembayaran sampai 
+						<strong><%= (24.hours.from_now).strftime("%d %B %Y pukul %I:%M %p") %></strong>
+					</h4>
+					<p>
+						<i>*Jangan lupa konfirmasi setelah melakukan pembayaran dengan mengirim email ke musaabdillahm9@gmail.com atau dengan mengirim sms ke 0858 8371 8464.</i>
+					</p>
 
-			</td>
-		</tr>
-		<tr>		
-			<td colspan="4"> <h4> Terima kasih sudah berbelanja di AB OnlineShop!</h4></td>
-		</tr>
+				</td>
+			</tr>
+			<tr style="padding-left: 10px;">		
+				<td colspan="4"> <h4> Terima kasih sudah berbelanja di AB OnlineShop!</h4></td>
+			</tr>
+		</tbody>
 	</table>
 </div>
