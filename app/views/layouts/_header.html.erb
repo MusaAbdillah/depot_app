@@ -31,8 +31,11 @@
 					<a href="#" data-toggle="modal" data-target=".bd-example-modal-lg" id="my-cart">
 						<b>
 							<span class="glyphicon glyphicon-shopping-cart"></span>
-							My Cart <span class="label label-success" id="cart-badge">
-								<%= cart_quantity(@cart.line_items)%> 									
+							<span class="label label-success" id="cart-badge">
+							<%= cart_quantity(@cart.line_items)%> item 									
+							</span>
+							 <span class="label label-success" id="cart-total">
+								Rp <%= number_with_delimiter(grand_total_price_with_go_jek_cost(@cart.line_items))%>
 							</span>
 						</b>
 					</a>

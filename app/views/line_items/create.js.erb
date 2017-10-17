@@ -1,5 +1,6 @@
 // update cart quantity every time add cart button clicked 
-$('#cart-badge').html("<%= cart_quantity(@cart.line_items)%>");
+$('#cart-badge').html("<%= pluralize(cart_quantity(@cart.line_items), 'item')%>");
+$('#cart-total').html("Rp <%= number_with_delimiter(grand_total_price_with_go_jek_cost(@cart.line_items)) %>");
 
 // condition for cart
 if ($('#cart tr').length == 1) {
