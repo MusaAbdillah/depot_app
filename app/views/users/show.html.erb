@@ -1,9 +1,9 @@
-<% provide(:title, "My Profile") %>
-<h3>My Profile</h3>
+<% provide(:title, "Profil") %>
+<h3>Profil</h3>
 <table class="table table-stripped">
 	<tbody>
 		<tr>
-			<td>Name</td>
+			<td>Nama</td>
 			<td><%= @user.name %></td>
 		</tr>
 		<tr>
@@ -11,31 +11,31 @@
 			<td><%= @user.email %></td>
 		</tr>
 		<tr>
-			<td>Phone</td>
+			<td>No Handphone</td>
 			<td><%= @user.phone %></td>
 		</tr>
 		<tr>
-			<td>Gender</td>
+			<td>Jenis Kelamin</td>
 			<td><%= @user.gender %></td>
 		</tr>
 	</tbody>
 </table>
 <% if @orders.any? %>
-	<h3>Order History</h3>
+	<h3>Catatan Pembelian</h3>
 	<table class="table table-bordered">
 		<% @orders.each do |order| %>
 		<thead>
 			<tr class="success">
-				<td colspan="2"><b> Order number</b> <span class="label label-success"><%= order.id %></span> </td>
+				<td colspan="2"><b> Nomor pembelian</b> <span class="label label-success"><%= order.id %></span> </td>
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
-				<td>Name</td>
+				<td>Nama Penerima</td>
 				<td><%= order.name %></td>
 			</tr>
 				<tr>
-				<td>Address</td>
+				<td>Alamat</td>
 				<td><%= order.address %></td>
 			</tr>
 				<tr>
@@ -43,11 +43,11 @@
 				<td><%= order.email %></td>
 			</tr>
 				<tr>
-				<td>Payment Type</td>
+				<td>Pembayaran</td>
 				<td><%= order.pay_type %></td>
 			</tr>
 				<tr>
-				<td>Order Date</td>
+				<td>Tanggal Pembelian</td>
 				<td><%= (order.created_at).strftime("%A, %d %B %Y %I:%M%p") %></td>
 			</tr>
 		</tbody>
@@ -55,5 +55,5 @@
 	</table>
 
 <% else %>
-	<h3> You have no order history</h3>
+	<h3> Anda tidak memiliki catatan pembelian</h3>
 <% end %>

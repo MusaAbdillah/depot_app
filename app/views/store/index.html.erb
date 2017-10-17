@@ -1,7 +1,7 @@
 <div class="container-fluid">
 	<div class="col-md-3 col-sm-12">
 		<ul class="list group">
-			<li class="list-group-item disabled"><b>Product Category</b></li>
+			<li class="list-group-item disabled"><b>Kategori Produk</b></li>
 			<% if @categories.any? %>
 				<% @categories.each do |category| %>
 		  			<li class="list-group-item"><%= link_to category.title, store_show_path(category) %></li>
@@ -12,7 +12,8 @@
 		</ul>
 	</div>
 	<div class="col-md-9 col-sm-12">				
-		<h1> <%= t('.title_html')%> </h1>
+		<!-- <h1> <%= t('.title_html')%> </h1> -->
+		<h1> Katalog Produk AB OnlineShop </h1>
 		<% cache ['store', Product.latest] do %>
 			<% @products.each do |product| %>
 				<% cache ['entry', product] do %>
@@ -20,8 +21,9 @@
 						<%= image_tag(product.image_url) %>
 						<h3><%= link_to product.title, product_path(product) %></h3>
 						<div class="price_line">
-							<span class="price"> Rp <%= number_with_delimiter(product.price) %> </span>
-							<%= button_to t('.add_html'), line_items_path(product_id: product), remote: true, class: "btn btn-danger" %>
+							<span class="price"> Rp <%= number_with_delimiter(product.price) %> </span><!-- 
+							<%= button_to t('.add_html'), line_items_path(product_id: product), remote: true, class: "btn btn-danger" %> -->
+							<%= button_to "Tambah ke Keranjang", line_items_path(product_id: product), remote: true, class: "btn btn-danger" %>
 						</div>
 					</div>
 				<% end %>

@@ -15,6 +15,11 @@
 		</tr>
 		
 	</table>
-	<%= button_to t('.checkout'), new_order_path, method: :get, class: "btn btn-danger" %>
+	<%= button_to "Lanjut Pengiriman", new_order_path, method: :get, class: "btn btn-danger" %>
 	<hr/>
+	<%= button_to "Kosongkan Keranjang", @cart, method: :delete, data: { confim: "Apakah anda yakin?" }, class: "btn btn-default" %>
+	<!-- old style with translation 
+	<%= button_to t('.checkout'), new_order_path, method: :get, class: "btn btn-danger" %>
+	 <hr/> 
 	<%= button_to t('.empty'), @cart, method: :delete, data: { confim: "Are you sure?" } %>
+	-->

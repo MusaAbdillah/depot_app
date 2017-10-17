@@ -1,34 +1,26 @@
-<% provide(:title, "Login") %>
+<% provide(:title, "Masuk") %>
 <div class="col-md-6 col-md-offset-3">
 	<%= form_tag do %>
 	<fieldset>
-		<legend> Please Log In </legend>
-		<table class="table table-striped">
-			<tbody>
-				<tr class="form-group">
-					<td><%= label_tag :email, 'Email' %></td>
-					<td><%= text_field_tag :email, params[:email], class: "form-control" %></td>
-				</tr>
-				<tr class="form-group">
-					<td><%= label_tag :password, 'Password' %></td>
-					<td><%= password_field_tag :password, params[:password], class: "form-control" %></td>
-				</tr>
-				<tr class="form-group">
-					<td></td>
-					<td><%= submit_tag 'Login', class: "btn btn-success btn-block" %></td>
-				</tr>
-				<hr>
-				<tr>
-					<td></td>
-					<td>
+		<legend> Silahkan Masuk </legend>
+		
+				<div class="form-group">
+					<%= label_tag :email, 'Email' %>
+					<%= text_field_tag :email, params[:email], class: "form-control" %>
+				</div>
+				<div class="form-group">
+					<%= label_tag :password, 'Password' %>
+					<%= password_field_tag :password, params[:password], class: "form-control" %>
+				</div>
+				<div class="form-group">				
+					<%= submit_tag 'Masuk', class: "btn btn-success btn-block" %>
+				</div>
+				<div>	
 						<p> 
-							New user? 
-							<%= link_to "Sign up now!", new_user_path, class: "btn btn-danger btn-block" %> 
+							Belum punya akun? 
+							<%= link_to "Daftar Sekarang!", new_user_path, class: "btn btn-danger btn-block" %> 
 						</p>
-					</td>
-				</tr>
-			</tbody>
-		</table>
+				</div>			
 	</fieldset>
 	<% end %>
 </div>

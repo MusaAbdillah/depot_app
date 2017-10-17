@@ -1,9 +1,6 @@
-<% provide(:title, "Question") %>
-<h3>Frequently Ask Question</h3>
+<% provide(:title, "Pertanyaan") %>
+<h3>Pertanyaan yang sering muncul</h3>
 <ol>
-	<li><b> Apakah ini web resmi AB OnlineShop?</b>
-		<ol> Ya benar ini web resmi AB OnlineShop.</ol>
-	</li>
 	<li><b> Apakah jenis pengiriman yang di dukung AB OnlineShop?</b>
 			<ol>Pengiriman yang di dukung yaitu pengiriman dengan go jek by go send</ol>
 	</li>
@@ -18,12 +15,12 @@
 		Bagaimana cara bertransaksi di AB OnlineShop</b>
 		<ol>
 			Untuk bertransaksi atau membeli barang di AB OnlineShop bisa di ikuti langkah langkah sebagai berikut:
-			<li>Daftar/Signup terlebih dahulu dengan cara klik link <%= link_to "Signup", new_user_path, class: "btn btn-danger" %> di pojok atas website kami, jika sudah punya akun silahkan klik <%= link_to "Login", login_path, class: "btn btn-success" %> tidak perlu mendaftar lagi</li>
-			<li>Silahkan pilih barang yang di inginkan kemudian klik add to cart</li>
-			<li>Barang yang sudah di masukkan ke cart akan muncul di simbol keranjang</li>
-			<li>Klik tombol Checkout untuk melanjutkan atau klik empty jika ingin mengosongkan cart</li>
-			<li>Selanjutnya akan ada data pengisian untuk pengiriman barang, silahkan di isi data ini dengan se detail mungkin,terutama <u><b>pengisian alamat harus mencakup nama provinsi, kota/kabupaten, kecamatan/kelurahan, nama jalan, nomor rumah serta kode pos</b></u></li>
-			<li>Jika data sudah lengkap silahkan klik Selesaikan Transaksi</li>
+			<li>Daftar/Signup terlebih dahulu dengan cara klik link <%= link_to "Daftar", new_user_path, class: "btn btn-danger" %> di pojok atas website kami, jika sudah punya akun silahkan klik <%= link_to "Masuk", login_path, class: "btn btn-success" %> tidak perlu mendaftar lagi</li>
+			<li>Silahkan pilih barang yang di inginkan kemudian klik Tambah ke Keranjang</li>
+			<li>Barang yang sudah di masukkan ke keranjang akan muncul di simbol keranjang</li>
+			<li>Klik tombol Lanjut pengiriman untuk melanjutkan atau klik kosongkan keranjang jika ingin mengosongkan keranjang</li>
+			<li>Selanjutnya akan ada data pengisian untuk pengiriman barang, silahkan di isi data ini dengan lengkap,<u><b>pengisian alamat harus mencakup nama provinsi, kota/kabupaten, kecamatan/kelurahan, nama jalan, nomor rumah serta kode pos</b></u></li>
+			<li>Jika alamat pengiriman sudah lengkap silahkan klik Selesaikan Transaksi</li>
 			<li>Sistem kami akan mengirimkan tagihan ke alamat email anda, tagihan mencakup total keseluruhan yang harus di bayar yaitu harga produk dan ongkos kirim dengan gojek (Rp 15.000)</li>
 			<li>Silahkan lakukan pelunasan ke rekening kami yang sudah tertera di email tagihan</li>
 			<li>Setelah melakukan pelunasan silakan kofirmasi ke alamat email kami musaabdillahm9@gmail.com atau sms ke nomor 0858 8371 8464</li>
