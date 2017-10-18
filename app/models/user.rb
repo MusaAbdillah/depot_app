@@ -5,14 +5,17 @@ class User < ActiveRecord::Base
   #association 
   has_many :orders, dependent: :destroy
 
+  # callback method
 	after_destroy :ensure_an_admin_remains
   before_save :downcase_email, :titleize_name 
-
+  
+  #validate attribute
   validates :name, presence: true, uniqueness: true
   validates :phone, :email, :gender, presence: true
   validates :password, presence: true, length: {minimum: 6}
   validates :email, presence: true, format: {with: REGEX_VALID_EMAIL}, length: {maximum: 255}, uniqueness: {case_sensitive: false} 
   
+  #method for password
   has_secure_password
 
   	private 

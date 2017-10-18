@@ -52,8 +52,8 @@
 					<li> <%= link_to current_user.email, user_path(current_user) %> </li>	
 					<li> <%= link_to "Keluar", logout_path, method: :delete %> </li>
 				<% else %>
-					<li> <%= link_to "Daftar", new_user_path %> </li>
 					<li> <%= link_to "Masuk", login_path %> </li>
+					<li> <%= link_to "Daftar", new_user_path %> </li>					
 				<% end %>
 				<!-- form for i18n -->
 				<!-- <li>

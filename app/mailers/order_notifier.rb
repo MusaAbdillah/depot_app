@@ -11,7 +11,7 @@ class OrderNotifier < ApplicationMailer
   def received(order)
     @order = order 
 
-    mail to: order.email, subject: "AB OnlineShop Order Confirmation"
+    mail to: order.email, subject: "AB OnlineShop Konfirmasi Pembayaran"
   end
 
   # Subject can be set in your I18n file at config/locales/en.yml
@@ -22,6 +22,6 @@ class OrderNotifier < ApplicationMailer
   def shipped(order)
     @order = order 
 
-    mail to: @order.email, subject: "AB OnlineShop Order Shipped"
+    mail to: @order.email, subject: "AB OnlineShop Konfirmasi Pengiriman"
   end
 end

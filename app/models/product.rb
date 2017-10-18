@@ -1,10 +1,4 @@
 class Product < ActiveRecord::Base
-	# require
-	require 'uri'
-	require 'net/http'
-	require 'openssl'
-	require 'json'
-
 	#association
 	has_many :line_items
 	has_many :orders, through: :line_items
