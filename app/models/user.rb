@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
   has_many :orders, dependent: :destroy
 
 	after_destroy :ensure_an_admin_remains
-  before_save :downcase_email, :downcase_name 
+  before_save :downcase_email, :titleize_name 
 
   validates :name, presence: true, uniqueness: true
   validates :phone, :email, :gender, presence: true
@@ -29,8 +29,8 @@ class User < ActiveRecord::Base
       end
 
       #method for downcase name 
-      def downcase_name 
-        self.name = name.downcase
+      def titleize_name 
+        self.name = name.titleize
       end
 
 

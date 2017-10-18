@@ -22,7 +22,7 @@
 				<% else %>
 					<!-- new style without translation -->
 					<li>  <%= link_to 'Pertanyaan', question_path %> </li>
-					<li>  <%= link_to 'Berita', news_path %> </li>
+					<li>  <%= link_to 'Informasi', news_path %> </li>
 					<li>  <%= link_to 'Hubungi Kami', contact_path %> </a> </li>
 
 					<!-- old sytle with translation
@@ -49,11 +49,11 @@
 				<% end %>
 				
 				<% if current_user %>
-					<li> <%= link_to "Profil", user_path(current_user) %> </li>	
+					<li> <%= link_to current_user.email, user_path(current_user) %> </li>	
 					<li> <%= link_to "Keluar", logout_path, method: :delete %> </li>
 				<% else %>
-					<li> <%= link_to "Masuk", login_path %> </li>
 					<li> <%= link_to "Daftar", new_user_path %> </li>
+					<li> <%= link_to "Masuk", login_path %> </li>
 				<% end %>
 				<!-- form for i18n -->
 				<!-- <li>
