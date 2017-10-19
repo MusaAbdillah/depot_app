@@ -1,4 +1,6 @@
+<% provide(:title, "kategori Produk") %>
 <% if @categories.any? %>
+<div class="table-responsive">
 	<table class="table table-striped">
 		<% @categories.each do |category| %>
 		<tr>
@@ -13,6 +15,7 @@
 		</tr>
 		<% end %>
 	</table>
+</div>
 <% else %>
 	<table class="table table-striped">
 	<tr>
@@ -22,4 +25,4 @@
 	</tr>
 </table>
 <% end %>
-<%= link_to "New Category", new_category_path, class: "btn btn-success" %> </a>
+<%= link_to "Tambah kategori Produk", new_category_path, class: "btn btn-success" %> </a>

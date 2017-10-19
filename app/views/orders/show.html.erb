@@ -1,38 +1,41 @@
-<% provide(:title, "Order Detail") %>
-<table class="table table-bordered">
-	<thead>
-		<tr>
-			<th> Name </th>
-			<th> Address </th>
-			<th> Email </th>
-			<th> Pay Type </th>
-		</tr>
-	</thead>
-	<tbody>
-		<tr>
-			<td> <%= @order.name %> </td>
-			<td> <%= @order.address %> </td>
-			<td> <%= @order.email %> </td>
-			<td> <%= @order.pay_type %> </td>
-		</tr>
-	</tbody>
-</table>
-
-<table class="table table-bordered">
-	<% @line_items.each do |line_item| %>
-	<tbody>
-		<tr>
-			<td>Quantity</td>
-			<td> <%= line_item.quantity %> </td>
-		</tr>
-		<tr>
-			<td>Product name </td>
-			<td> <%= line_item.product.title %> </td>
-		</tr>
-		<tr>
-			<td>Total </td>
-			<td><%= line_item.total_price %></td>
-		</tr>
-	</tbody>
-	<% end %>
-</table>
+<% provide(:title, "Detail Pesanan") %>
+<div class="table-responsive">
+	<table class="table table-bordered">
+		<thead>
+			<tr>
+				<th> Nama </th>
+				<th> Alamat </th>
+				<th> Email </th>
+				<th> Pembayaran </th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td> <%= @order.name %> </td>
+				<td> <%= @order.address %> </td>
+				<td> <%= @order.email %> </td>
+				<td> <%= @order.pay_type %> </td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+<div class="table-responsive">
+	<table class="table table-bordered">
+		<% @line_items.each do |line_item| %>
+		<tbody>
+			<tr>
+				<td>Quantity</td>
+				<td> <%= line_item.quantity %> </td>
+			</tr>
+			<tr>
+				<td>Product name </td>
+				<td> <%= line_item.product.title %> </td>
+			</tr>
+			<tr>
+				<td>Total </td>
+				<td><%= line_item.total_price %></td>
+			</tr>
+		</tbody>
+		<% end %>
+	</table>
+</div>

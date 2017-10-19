@@ -1,33 +1,36 @@
 <% provide(:title, "Product") %>
-<table class="table table-bordered">
-  <% @products.each do |product| %>
-      <tr>
-        <td> <img src="<%= product.image_url %>" class="img-rounded" alt="Cinque Terre" width="50" height="50"></td>
-        <td></td>
-        <td>
-          <dl>
-            <dt> <%= product.title %> </dt>
-            <dd> <%= (product.description).truncate_words(10) %> </dd>
-          </dl>       
-        </td>
-
-        <td>
-          <%= link_to product, class: "btn btn-info btn-sm" do %>
-            <i class="glyphicon glyphicon-eye-open"></i>
-          <% end %>            
+<div class="table-responsive">
+  <%= will_paginate %>
+  <table class="table table-bordered">
+    <% @products.each do |product| %>
+        <tr>
+          <td> <img src="<%= product.image_url %>" class="img-rounded" alt="Cinque Terre" width="50" height="50"></td>
+          <td></td>
+          <td>
+            <dl>
+              <dt> <%= product.title %> </dt>
+              <dd> <%= (product.description).truncate_words(10) %> </dd>
+            </dl>       
           </td>
-        <td>
-          <%= link_to edit_product_path(product), class: "btn btn-warning btn-sm" do %>
-            <i class="glyphicon glyphicon-pencil"></i>    
-          <% end %>
-        </td>
-        <td>
-          <%= link_to product, method: :delete,data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm"  do %>
-            <i class="glyphicon glyphicon-trash"></i>
-          <% end %>
-        </td>
-      </tr>
-  <% end %>
-</table>
 
-<%= link_to 'New Product', new_product_path, class: "btn btn-success" %>
+          <td>
+            <%= link_to product, class: "btn btn-info btn-sm" do %>
+              <i class="glyphicon glyphicon-eye-open"></i>
+            <% end %>            
+            </td>
+          <td>
+            <%= link_to edit_product_path(product), class: "btn btn-warning btn-sm" do %>
+              <i class="glyphicon glyphicon-pencil"></i>    
+            <% end %>
+          </td>
+          <td>
+            <%= link_to product, method: :delete,data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm"  do %>
+              <i class="glyphicon glyphicon-trash"></i>
+            <% end %>
+          </td>
+        </tr>
+    <% end %>
+  </table>
+  <%= will_paginate %>
+</div>
+<%= link_to 'Tambah Produk', new_product_path, class: "btn btn-success" %>

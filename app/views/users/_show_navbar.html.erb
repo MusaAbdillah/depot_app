@@ -1,0 +1,31 @@
+<ul class="nav nav-pills nav-stacked">
+	<li><%= link_to user_path(@user) do %>
+		<i class="fa fa-home fa-fw"></i>Home
+		<% end %>
+	</li>
+	<li> <%= link_to history_user_path(@user) do %> 
+			<i class="fa fa-list-alt fa-fw"></i> Catatan Pembelian
+		<% end %>
+	</li>
+</ul>
+
+<style type="text/css">
+	@import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css);
+	body {
+		margin-top:20px;
+	}
+	
+	.fa-fw {
+		width: 2em;
+	}
+
+	.nav li a {
+		background-color: #e4e4e4;
+		color: black;
+	}
+
+	.nav li a:hover {
+			background-color: #e4e4e4;
+			color: black;
+	}
+</style>

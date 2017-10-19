@@ -2,74 +2,51 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-3">
-            <ul class="nav nav-pills nav-stacked">
-                <li><%= link_to user_path(@user) do %>
-                	<i class="fa fa-home fa-fw"></i>Home
-                	<% end %>
-                </li>
-                <li> <%= link_to history_user_path(@user) do %> 
-                		<i class="fa fa-list-alt fa-fw"></i> Catatan Pembelian
-                	<% end %>
-                </li>
-            </ul>
+        <div class="col-md-3 col-sm-12">
+            <%= render 'show_navbar' %>
         </div>
-        <div class="col-md-9 well">
-            <% if @orders.any? %>
-				<h3>Catatan Pembelian</h3>
+        <div class="col-md-9 col-sm-12 well">
+        	<div class="table-responsive">
+            	<% if @orders.any? %>
+					<h3>Catatan Pembelian</h3>
+					<%= will_paginate @orders %>
+					<table class="table table-bordered">
+						<% @orders.each do |order| %>
+						<thead>
+							<tr>
+								<td colspan="2"><b> Nomor pembelian</b> <span class="label label-success"><%= order.id %></span> </td>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>Nama Penerima</td>
+								<td><%= order.name %></td>
+							</tr>
+								<tr>
+								<td>Alamat</td>
+								<td><%= order.address %></td>
+							</tr>
+								<tr>
+								<td>Email</td>
+								<td><%= order.email %></td>
+							</tr>
+								<tr>
+								<td>Pembayaran</td>
+								<td><%= order.pay_type %></td>
+							</tr>
+								<tr>
+								<td>Tanggal Pembelian</td>
+								<td><%= (order.created_at).strftime("%A, %d %B %Y %I:%M%p") %></td>
+							</tr>
+						</tbody>
+						<% end %>
+					</table>
 				<%= will_paginate @orders %>
-				<table class="table table-bordered">
-					<% @orders.each do |order| %>
-					<thead>
-						<tr>
-							<td colspan="2"><b> Nomor pembelian</b> <span class="label label-success"><%= order.id %></span> </td>
-						</tr>
-					</thead>
-					<tbody>
-						<tr>
-							<td>Nama Penerima</td>
-							<td><%= order.name %></td>
-						</tr>
-							<tr>
-							<td>Alamat</td>
-							<td><%= order.address %></td>
-						</tr>
-							<tr>
-							<td>Email</td>
-							<td><%= order.email %></td>
-						</tr>
-							<tr>
-							<td>Pembayaran</td>
-							<td><%= order.pay_type %></td>
-						</tr>
-							<tr>
-							<td>Tanggal Pembelian</td>
-							<td><%= (order.created_at).strftime("%A, %d %B %Y %I:%M%p") %></td>
-						</tr>
-					</tbody>
-					<% end %>
-				</table>
-				<%= will_paginate @orders %>
-
-			<% else %>
-				<h3> Anda tidak memiliki catatan pembelian</h3>
-			<% end %>
+			</div>
+				<% else %>
+					<h3> Anda tidak memiliki catatan pembelian</h3>
+				<% end %>
         </div>
     </div>
 </div>
 
-<style type="text/css">
-	@import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css);
-	body{margin-top:20px;}
-	.fa-fw {width: 2em;}
-
-	.nav li a {
-		background-color: #e4e4e4;
-		color: black;
-	}
-
-	.nav li a:hover {
-			background-color: #e4e4e4;
-			color: black;
-	}
-</style>

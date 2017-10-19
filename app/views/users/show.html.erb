@@ -2,20 +2,12 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-md-3">
-            <ul class="nav nav-pills nav-stacked">
-                <li><%= link_to user_path(@user) do %>
-                	<i class="fa fa-home fa-fw"></i>Home
-                	<% end %>
-                </li>
-                <li> <%= link_to history_user_path(@user) do %> 
-                		<i class="fa fa-list-alt fa-fw"></i> Catatan Pembelian
-                	<% end %>
-                </li>
-            </ul>
+        <div class="col-md-3 col-sm-12">
+            <%= render 'show_navbar' %>
         </div>
-        <div class="col-md-9 well">
+        <div class="col-md-9 col-sm-12 well">
             <h3>Profil</h3>
+            <div class="table-responsive">
 			<table class="table table-stripped">
 				<tbody>
 					<tr>
@@ -36,22 +28,7 @@
 					</tr>
 				</tbody>
 			</table>
+			</div>
         </div>
     </div>
 </div>
-
-<style type="text/css">
-	@import url(http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css);
-	body{margin-top:20px;}
-	.fa-fw {width: 2em;}
-
-	.nav li a {
-		background-color: #e4e4e4;
-		color: black;
-	}
-
-	.nav li a:hover {
-			background-color: #e4e4e4;
-			color: black;
-	}
-</style>

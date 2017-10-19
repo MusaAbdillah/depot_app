@@ -1,45 +1,47 @@
 <% provide(:title, "Orders") %>
-<table class="table table-bordered">
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th>Phone Number</th>
-      <th>Address</th>
-      <th>Postal code</th>
-      <th>Email</th>
-      <th>Pay type</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @orders.each do |order| %>
+<div class="table-responsive">
+  <%= will_paginate %>
+  <table class="table table-bordered">
+    <thead>
       <tr>
-        <td><%= order.name %></td>
-        <td><%= order.phone %></td>
-        <td><%= order.address %></td>
-        <td><%= order.pos_code %></td>
-        <td><%= order.email %></td>
-        <td><%= order.pay_type %></td>
-        <td>
-          <%= link_to order, class: "btn btn-info btn-sm" do %>
-          <i class="glyphicon glyphicon-eye-open"></i>  
-          <% end %>          
-        </td>
-        <td>
-          <%= link_to edit_order_path(order), class: "btn btn-warning btn-sm" do %>
-            <i class="glyphicon glyphicon-pencil"></i>
-          <% end %>
-        </td>
-        <td>
-          <%= link_to order, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" do %>
-            <i class="glyphicon glyphicon-trash"></i>
-          <% end %>
-            
-          </td>
+        <th>Nama</th>
+        <th>No Handphone</th>
+        <th>Alamat</th>
+        <th>Kode Pos</th>
+        <th>Email</th>
+        <th>Pembayaran</th>
+        <th colspan="3"></th>
       </tr>
-    <% end %>
-    <%= will_paginate %>
-  </tbody>
-</table>
+    </thead>
 
+    <tbody>
+      <% @orders.each do |order| %>
+        <tr>
+          <td><%= order.name %></td>
+          <td><%= order.phone %></td>
+          <td><%= order.address %></td>
+          <td><%= order.pos_code %></td>
+          <td><%= order.email %></td>
+          <td><%= order.pay_type %></td>
+          <td>
+            <%= link_to order, class: "btn btn-info btn-sm" do %>
+            <i class="glyphicon glyphicon-eye-open"></i>  
+            <% end %>          
+          </td>
+          <td>
+            <%= link_to edit_order_path(order), class: "btn btn-warning btn-sm" do %>
+              <i class="glyphicon glyphicon-pencil"></i>
+            <% end %>
+          </td>
+          <td>
+            <%= link_to order, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" do %>
+              <i class="glyphicon glyphicon-trash"></i>
+            <% end %>
+              
+            </td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <%= will_paginate %>
+</div>
