@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  before_action :set_user, only: [:show, :edit, :update, :destroy]
-  before_action :require_admin, except: [:new, :create, :show]
+  before_action :set_user, only: [:show, :edit, :update, :destroy, :history]
+  before_action :require_admin, except: [:new, :create, :show, :history]
   skip_before_action :authorize, only: [:new, :create]
 
   # GET /users
@@ -12,7 +12,6 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @orders = @user.orders
   end
 
   # GET /users/new
@@ -69,6 +68,10 @@ class UsersController < ApplicationController
       format.html { redirect_to users_url }
       format.json { head :no_content }
     end
+  end
+
+  def history 
+    @orders = @user.orders.paginate(page: params[:page], per_page: 5)
   end
 
   private

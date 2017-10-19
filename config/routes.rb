@@ -27,8 +27,10 @@ Rails.application.routes.draw do
   end
 
   scope '(:locale)' do 
-    resources :users
-    resources :orders
+    resources :users do 
+      get :history, on: :member
+    end
+    resources :orders 
     resources :line_items
     resources :carts
     resources :categories, except: [:show, :destroy]
