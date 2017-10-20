@@ -1,4 +1,5 @@
 <% provide(:title, "Pengguna") %>
+<div class="col-xs-12 col-sm-12 col-md-12">
 <div class="table-responsive">
 <%= will_paginate %>
   <table class="table table-striped">
@@ -37,5 +38,6 @@
     </tbody>
   </table>
   <%= will_paginate %>
+</div>
 </div>
 <%= link_to 'Tambah Pengguna', new_user_path, class: "btn btn-success" %>

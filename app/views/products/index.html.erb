@@ -1,4 +1,5 @@
 <% provide(:title, "Product") %>
+<div class="col-xs-12 col-sm-12 col-md-12">
 <div class="table-responsive">
   <%= will_paginate %>
   <table class="table table-bordered">
@@ -32,5 +33,6 @@
     <% end %>
   </table>
   <%= will_paginate %>
+</div>
 </div>
 <%= link_to 'Tambah Produk', new_product_path, class: "btn btn-success" %>
