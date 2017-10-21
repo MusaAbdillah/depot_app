@@ -1,25 +1,35 @@
 <% provide(:title, "Product Detail") %>
-<table class="table table-stripped">
-	<tbody>
-		<tr>
-			<td>
-				<img src="<%= @product.image_url %>" class="img-rounded" alt="Cinque Terre" width="304" height="236"> 	
-			</td>
-			<td>
-				<h3>
-					<span class="label label-success">
-					Rp <%= number_with_delimiter(@product.price) %>
-				</span>
-				</h3>
-			</td>
-		</tr>
-		<tr>
-			<td colspan="2"><h3><%= @product.title %></h3></td>
-		</tr>
-		<tr>
-			<td colspan="2"><%= simple_format(@product.description) %></td>
-		</tr>
-	</tbody>
-</table>
-
-
+<div class="container">
+<div class="row">
+	<div class="col-md-8">
+		<img src="<%= @product.image_url %>" class="img-rounded" alt="product" width="304" height="236">
+	</div>
+	<div class="col-md-4">
+		<table class="table table-bordered">
+			<tbody>
+				<tr>
+					<td>
+						<h3>
+						<span class="label label-success">
+								Rp <%= number_with_delimiter(@product.price) %>
+						</span>
+						</h3>
+					</td>
+				</tr>
+				<tr>
+					<td>
+						<%= button_to "Tambah ke Keranjang", line_items_path(product_id: @product.id), remote: true, class: "btn btn-danger" %>
+					</td>
+				</tr>
+			</tbody>	
+		</table>
+		
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-8">
+		<h3><%= @product.title %></h3>
+		<p><%= simple_format(@product.description) %></p>
+	</div>
+</div>
+</div>

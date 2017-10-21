@@ -1,17 +1,17 @@
-<div class="col-md-12">				
-	<h1> <%= @category.title %> </h1>
-	<% cache ['store', Product.latest] do %>
-		<% @products.each do |product| %>
-			<% cache ['entry', product] do %>
-				<div class="entry">
-					<%= image_tag(product.image_url) %>
-					<h3><%= link_to product.title, product_path(product) %></h3>
-					<div class="price_line">
-						<span class="price"> Rp <%= number_with_delimiter(product.price) %> </span>
-						<%= button_to "Tambah ke Keranjang", line_items_path(product_id: product), remote: true, class: "btn btn-danger" %>
-					</div>
+<div class="container-fluid">
+<div class="col-sm-12 col-md-12">				
+	<h1><u> <%= @category.title %> </u> </h1>
+		<div class="row">
+			<% @products.each do |p| %>
+			<div class="col-sm-12 col-md-2" style="padding: 5px;">
+				<div class="card" style="height: 250px; width: 200px; ">
+				  <%= link_to (image_tag p.image_url, height: 180, width: 200, class: "card-img-top"), product_path(p) %>
+				  <div class="card-block">
+				    <p class="card-title" style="text-align: center; font-weight: bold;"><%= link_to p.title, product_path(p) %></p>
+				  </div>
 				</div>
+			</div>
 			<% end %>
-		<% end %>
-	<% end %>
+		</div>
+</div>
 </div>

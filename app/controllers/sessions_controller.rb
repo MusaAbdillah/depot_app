@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
   	user = User.find_by(email: params[:email])
   	if user && user.authenticate(params[:password])
   		login user 
-      flash[:success] = 'Login successfully!'
+      flash[:success] = "#{user.name} Berhasil Masuk!"
       redirect_back_or user
   	else
       flash[:danger] = 'Invalid user/password combination'
@@ -18,7 +18,7 @@ class SessionsController < ApplicationController
 
   def destroy
   	logout
-    flash[:danger]  = "Logged out successfully!"
+    flash[:danger]  = "Anda Berhasil Keluar!"
   	redirect_to store_url
   end
 

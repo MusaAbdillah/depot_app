@@ -14,8 +14,8 @@ class CategoriesController < ApplicationController
 		@category = Category.new(category_params)
 		respond_to do |format|
 		  if @category.save
-		    format.html { redirect_to store_url }
-		    flash[:success] = "Product category created!"
+		    format.html { redirect_to :back }
+		    flash[:success] = "Kategori Produk berhasil di buat!"
 		  else
 		    format.html { render :new }
 		  end
@@ -28,7 +28,7 @@ class CategoriesController < ApplicationController
 	def update 
 		respond_to do |format|
 			if @category.update_attributes(category_params)
-				flash[:success] = "Category Product updated!"
+				flash[:success] = "Kategori Produk berhasil di ubah!"
 				format.html { redirect_to categories_path }
 			else
 				render 'edit'

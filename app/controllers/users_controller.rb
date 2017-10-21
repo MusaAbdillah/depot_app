@@ -30,7 +30,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         login @user
-        flash[:success] = "Welcome #{@user.name} to AB OnlineShop!."
+        flash[:success] = "Selamat datang #{@user.name} di AB OnlineShop!."
         format.html { redirect_to admin_url }
         format.json { render :show, status: :created, location: @user }
       else
@@ -45,7 +45,7 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        flash[:success] = "User #{@user.name} was successfully updated."
+        flash[:success] = "Akun #{@user.name} berhasil di ubah!."
         format.html { redirect_to users_url }
         format.json { render :show, status: :ok, location: @user }
       else
@@ -60,7 +60,7 @@ class UsersController < ApplicationController
   def destroy
     begin
       @user.destroy
-      flash[:success] = "User #{@user.name} was successfully destroyed!"
+      flash[:success] = "Akun #{@user.name} berhasil di hapus!"
     rescue StandardError => e
       flash[:danger] = e.message
     end

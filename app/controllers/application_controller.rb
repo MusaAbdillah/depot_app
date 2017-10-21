@@ -16,7 +16,7 @@ class ApplicationController < ActionController::Base
 	  	def authorize
 	  		unless User.find_by(id: session[:user_id])
 	  			store_location
-	  			flash[:warning] = "Please log in"
+	  			flash[:warning] = "Silahkan masuk terlebih dahulu!"
 	  			redirect_to login_url 
 	  		end
 	  	end
@@ -41,7 +41,7 @@ class ApplicationController < ActionController::Base
 	  #method for current user already have admin previlage
 	  def require_admin
 	  	unless current_user.admin?
-	  		flash[:warning] = "You should have admin previlage to access this part of site" 
+	  		flash[:warning] = "Anda harus punya akses admin untuk halaman ini!" 
 	  		redirect_to admin_url
 	  	end
 	end 

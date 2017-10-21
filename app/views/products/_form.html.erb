@@ -1,11 +1,11 @@
-<div class="col-md-6">
+<div class="col-md-6 col-md-offset-3">
 <%= simple_form_for(@product) do |f| %>
 
     <%= f.input :title, label: "Nama Produk" %>
-    <%= f.input :description, input_html: {rows: '10'}, label: "Deskripsi" %>
+    <%= f.association :category, label: "Kategori Produk", prompt: "== Pilih Kategori Produk ==" %>
     <%= f.input :image_url, label: "Link Gambar" %>
     <%= f.input :price, label: "Harga" %>
-    <%= f.association :category, label: "Kategori Produk" %>
+    <%= f.input :description, input_html: {rows: '10'}, label: "Deskripsi" %>
    	<%= f.button :submit,"Tambah Produk" ,:class => "btn btn-success" %>
 
 <% end %>

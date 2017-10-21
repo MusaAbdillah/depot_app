@@ -20,7 +20,7 @@ class OrdersController < ApplicationController
   # GET /orders/new
   def new
      if @cart.line_items.empty? 
-      flash[:info] = "Your cart is empty"
+      flash[:info] = "Kernjang belanja anda kosong!"
       redirect_to store_url
       return
     end
@@ -42,11 +42,10 @@ class OrdersController < ApplicationController
         Cart.destroy(session[:cart_id])
         session[:cart_id] = nil
         OrderNotifier.received(@order).deliver
-        flash[:success] =  I18n.t('.thanks')
+        flash[:success] =  "Terima kasih sudah berbelanja di AB OnlineShop!"
         format.html { redirect_to store_url }
         format.json { render :show, status: :created, location: @order }
       else
-        flash[:warning] = "Please login first or register if you don't have an account."
         format.html { render :new}
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
@@ -58,7 +57,7 @@ class OrdersController < ApplicationController
   def update
     respond_to do |format|
       if @order.update(order_params)
-        flash[:success] = 'Order was successfully updated.'
+        flash[:success] = 'Pesanan berhasil di ubah!.'
         format.html { redirect_to @order }
         format.json { render :show, status: :ok, location: @order }
       else
@@ -73,7 +72,7 @@ class OrdersController < ApplicationController
   def destroy
     @order.destroy
     respond_to do |format|
-      flash[:danger] = 'Order was successfully destroyed.'
+      flash[:danger] = 'Pesanan berhasil di hapus!.'
       format.html { redirect_to orders_url }
       format.json { head :no_content }
     end
