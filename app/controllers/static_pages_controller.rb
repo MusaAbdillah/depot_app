@@ -16,9 +16,9 @@ class StaticPagesController < ApplicationController
 	  	email = params[:email]
 	  	content = params[:content]
 	  	if !email.empty? && !content.empty!
-	      flash[:success] = 'Login successfully!'
+	      flash[:success] = 'Berhasil Masuk!'
 	  	else
-	      flash[:danger] = 'Invalid user/password combination'
+	      flash[:danger] = 'Kombinasi user/password salah!'
 	  	end
 	  end
 end
