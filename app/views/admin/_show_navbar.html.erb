@@ -1,0 +1,37 @@
+<ul class="nav nav-pills nav-stacked">
+	<li> <%= link_to admin_path do %> 
+		<i class="fa fa-tachometer" aria-hidden="true"></i> Menu Utama
+		<% end %>
+	</li>
+	<li> <%= link_to orders_path do %> 
+		<i class="fa fa-exchange" aria-hidden="true"></i> Transaksi
+		<% end %>
+	</li>
+	<li> <%= link_to products_path do %> 
+		<i class="fa fa-gift" aria-hidden="true"></i> Produk
+		<% end %>
+	</li>
+	<li> <%= link_to users_path do %> 
+		<i class="fa fa-user" aria-hidden="true"></i> Pengguna
+		<% end %>	
+	</li>
+	<li> <%= link_to categories_path do %> 
+		<i class="fa fa-shopping-bag" aria-hidden="true"></i> Kategori Produk
+		<% end %>
+	</li>
+</ul>
+
+<style type="text/css">
+	.col-md-3 {
+	}
+
+	.nav li a {
+			background-color: #e4e4e4;
+			color: black;
+		}
+
+	.nav li a:hover {
+				background-color: #e4e4e4;
+				color: black;
+		}
+</style>

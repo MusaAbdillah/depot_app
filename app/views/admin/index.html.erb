@@ -1,11 +1,18 @@
 <% provide(:title, "Admin") %>
-<div class="text-center">
-<h1> Welcome <%= current_user.name %> </h1>
-<h2>It's <%= (Time.now).strftime("%A, %d %B %Y %I:%M %p") %></h2>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12 col-md-3">
+            <%= render 'show_navbar' %>
+        </div>
+        <div class="col-sm-12 col-md-9 text-center">
+        <h1> Selamat Datang <%= current_user.name %> </h1>
+		<h2><%= (Time.now).strftime("%A, %d %B %Y %I:%M %p") %></h2>
 
-<% if current_user && current_user.admin? %>
-	<h3>We have <strong><%= pluralize(@total_order, 'Order') %></strong>.</h3>
-<% else %>
-	<h3> Let's get shopping!</h3> <%= button_to "Shop now!", admin_path, class: "btn btn-danger" %>
-<% end %>
+		<% if current_user && current_user.admin? %>
+			<h3>Kita Mempunyai <strong><%= pluralize(@total_order, 'Order') %></strong>.</h3>
+		<% else %>
+			<h3> Ayo Belanja!</h3> <%= button_to "Shop now!", admin_path, class: "btn btn-danger" %>
+		<% end %>
+		</div>
+    </div>
 </div>

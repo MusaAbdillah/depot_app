@@ -12,24 +12,10 @@
           </div>
           <div id="navbar" class="navbar-collapse collapse">
             <ul class="nav navbar-nav">
-              	<% if current_user %>
-					<% if current_user.admin? %>
-						<li> <%= link_to 'Transaksi', orders_path %> </li>
-						<li> <%= link_to 'Produk', products_path %> </li>
-						<li> <%= link_to 'Pengguna', users_path %> </li>
-						<li>  <%= link_to "Kategori", categories_path %> </a> </li>
-					<% end %>			
-				<% else %>
-					<!-- new style without translation -->
+              		<!-- new style without translation -->
 					<li>  <%= link_to 'Pertanyaan', question_path %> </li>
 					<li>  <%= link_to 'Informasi', news_path %> </li>
 					<li>  <%= link_to 'Hubungi Kami', contact_path %> </a> </li>
-
-					<!-- old sytle with translation
-					<li>  <%= link_to t('.questions'), question_path %> </li>
-					<li>  <%= link_to t('.news'), news_path %> </li>
-					<li>  <%= link_to t('.contact'), contact_path %> </a> </li> -->
-				<% end %>
             </ul>
             <ul class="nav navbar-nav navbar-right">
               	<% if @cart %>
@@ -49,6 +35,9 @@
 				<% end %>
 				
 				<% if current_user %>
+					<% if current_user.admin? %>
+						<li> <%= link_to 'Administrasi', admin_path %> </li>
+					<% end %>
 					<li> <%= link_to current_user.email, user_path(current_user) %> </li>	
 					<li> <%= link_to "Keluar", logout_path, method: :delete %> </li>
 				<% else %>
@@ -73,7 +62,7 @@
 	  		<div class="modal-content">
 		      	<div class="modal-body" id="cart-body">
 		        	<% if @cart %>
-							<%= render @cart %>
+							<%= render 'layouts/cart2' %>
 					<% end %>
 		      	</div>
 		      	<div class="modal-footer">

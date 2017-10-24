@@ -11,7 +11,7 @@ class SessionsController < ApplicationController
       flash[:success] = "#{user.name} Berhasil Masuk!"
       redirect_back_or user
   	else
-      flash[:danger] = 'konbinasi user/password salah!'
+      flash[:danger] = 'kombinasi user/password salah!'
   		redirect_to login_url
   	end
   end

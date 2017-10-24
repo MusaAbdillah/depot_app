@@ -1,13 +1,26 @@
 <% provide(:title, "Product") %>
 <div class="container-fluid">
-<div class="col-xs-12 col-sm-12 col-md-12">
+<div class="col-sm-12 col-md-3">
+    <%= render 'admin/show_navbar' %>
+</div>
+<div class="col-xs-12 col-sm-12 col-md-9">
+<h3>Daftar Semua Produk</h3>
 <div class="table-responsive">
   <%= will_paginate %>
   <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th> Gambar </th>
+        <th> Nama </th>
+        <th></th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
     <% @products.each do |product| %>
+        <tbody>
         <tr>
           <td> <img src="<%= product.image_url %>" class="img-rounded" alt="Cinque Terre" width="50" height="50"></td>
-          <td></td>
           <td>
             <dl>
               <dt> <%= product.title %> </dt>
@@ -31,10 +44,11 @@
             <% end %>
           </td>
         </tr>
+        </tbody>
     <% end %>
   </table>
   <%= will_paginate %>
 </div>
-</div>
 <%= link_to 'Tambah Produk', new_product_path, class: "btn btn-success" %>
-<div class="container-fluid">
+</div>
+

@@ -3,32 +3,24 @@
 	<div class="col-sm-12 col-md-12">
 		<h3> Produk Paling Laris! </h3>
 		<div class="col-sm-12 col-md-3">
-			<div class="row">
-				<div class="col-sm-12 col-md-3 col-lg-2">
-	                <div class="card" style="border: none;">
-	                    <%= link_to (image_tag @products.first.image_url, height: 300, width: 280, class: "card-img-top"), product_path(@products.first.id) %>
-	                     <div class="card-block" style="width: 280px;">
-	                        <div class="card-text">
-	                           <%= link_to @products.first.title, product_path(@products.first.id) %>
-	                        </div>
-	                    </div> 
-	                </div>
-	            </div>
-			</div>		
+            <div class="card" style="border: 1px solid black;">
+                <%= link_to (image_tag @products.first.image_url, class: "card-img-top"), product_path(@products.first.id) %>
+                <div class="card-block">
+                    <div class="card-text">
+                       <%= link_to @products.first.title, product_path(@products.first.id) %>
+                    </div>
+                </div>
+            </div>	           		
 		</div>
 		<div class="col-sm-12 col-md-3">
-			<div class="row">
-				<div class="col-sm-12 col-md-3 col-lg-2">
-	                <div class="card" style="border: none;">
-	                    <%= link_to (image_tag @products.first.image_url, height: 300, width: 280, class: "card-img-top"), product_path(@products.first.id) %>
-	                     <div class="card-block" style="width: 280px;">
-	                        <div class="card-text">
-	                           <%= link_to @products.first.title, product_path(@products.first.id) %>
-	                        </div>
-	                    </div> 
-	                </div>
-	            </div>
-			</div>		
+            <div class="card" style="border: 1px solid black;">
+                <%= link_to (image_tag @products.last.image_url, class: "card-img-top"), product_path(@products.last.id) %>
+                <div class="card-block">
+                    <div class="card-text">
+                       <%= link_to @products.last.title, product_path(@products.last.id) %>
+                    </div>
+                </div>
+            </div>   
 		</div>
 	</div>
 </div>
