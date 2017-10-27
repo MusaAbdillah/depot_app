@@ -1,14 +1,13 @@
 <% provide(:title, "Catatan Pembelian") %>
-
-<div class="container">
-    <div class="row">
+<div class="container-fluid">
+ 
         <div class="col-md-3 col-sm-12">
             <%= render 'show_navbar' %>
         </div>
-        <div class="col-md-9 col-sm-12 well">
-        	<div class="table-responsive">
+        <div class="col-md-9 col-sm-12">
+        	<h3>Catatan Pembelian</h3>
+            <div class="table-responsive">
             	<% if @orders.any? %>
-					<h3>Catatan Pembelian</h3>
 					<%= will_paginate @orders %>
 					<table class="table table-bordered">
 						<% @orders.each do |order| %>
@@ -42,11 +41,10 @@
 						<% end %>
 					</table>
 				<%= will_paginate @orders %>
-			</div>
 				<% else %>
 					<h3> Anda tidak memiliki catatan pembelian</h3>
 				<% end %>
+			</div>
         </div>
-    </div>
 </div>
 

@@ -4,9 +4,17 @@
     <%= render 'admin/show_navbar' %>
 </div>
 <div class="col-xs-12 col-sm-12 col-md-9">
+<h3> Daftar Semuan Kateogri Produk</h3>
 <% if @categories.any? %>
 <div class="table-responsive">
 	<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>Nama Kategori</th>
+			<th></th>
+		</tr>
+	</thead>
+	<tbody>
 		<% @categories.each do |category| %>
 		<tr>
 			<td>
@@ -19,6 +27,7 @@
 			</td>
 		</tr>
 		<% end %>
+	</tbody>
 	</table>
 </div>
 <% else %>

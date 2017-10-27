@@ -20,7 +20,8 @@
     <% @products.each do |product| %>
         <tbody>
         <tr>
-          <td> <img src="<%= product.image_url %>" class="img-rounded" alt="Cinque Terre" width="50" height="50"></td>
+          <td> 
+            <img src="<%= product.image_url %>" class="img-rounded" alt="Cinque Terre" width="50" height="50"></td>
           <td>
             <dl>
               <dt> <%= product.title %> </dt>
@@ -50,5 +51,6 @@
   <%= will_paginate %>
 </div>
 <%= link_to 'Tambah Produk', new_product_path, class: "btn btn-success" %>
+</div>
 </div>
 

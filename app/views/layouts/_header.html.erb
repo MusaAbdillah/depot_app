@@ -39,10 +39,18 @@
 						<li> <%= link_to 'Administrasi', admin_path %> </li>
 					<% end %>
 					<li> <%= link_to current_user.email, user_path(current_user) %> </li>	
-					<li> <%= link_to "Keluar", logout_path, method: :delete %> </li>
+					<li> 
+						<%= link_to logout_path, method: :delete do %> 
+							<span class="glyphicon glyphicon-log-out"></span> Keluar
+						<% end %>
+					</li>
 				<% else %>
 					<li> <%= link_to "Daftar", new_user_path %> </li>					
-					<li> <%= link_to "Masuk", login_path %> </li>
+					<li> 
+						<%= link_to login_path do %>
+						<span class="glyphicon glyphicon-log-in"></span> Masuk
+						<% end %>
+					 </li>
 				<% end %>
 				<!-- form for i18n -->
 				<!-- <li>
